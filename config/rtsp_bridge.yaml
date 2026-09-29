@@ -1,0 +1,20 @@
+orbvi_4p_bridge:
+  ros__parameters:
+    # Requires an explicit rtsp_url launch argument; never falls back to Fake.
+    runtime_mode: unsupported
+    camera_count: 1
+    rtsp_url: ''
+    rtsp_url_1: ''
+    rtsp_url_2: ''
+    rtsp_url_3: ''
+    # Optional real OIMU/1 receiver; remains off unless explicitly enabled.
+    imu_enabled: false
+    imu_bind_address: 0.0.0.0
+    imu_source_address: ''
+    imu_port: 5600
+    imu_frame_id: orbvi_imu
+    callback_queue_capacity: 8
+    subscription_queue_capacity: 8
+    publish_queue_depth: 5
+    topic_namespace: /orbvi/raw
+    frame_id_prefix: orbvi_camera_

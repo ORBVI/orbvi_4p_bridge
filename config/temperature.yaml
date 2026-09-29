@@ -1,0 +1,12 @@
+orbvi_temperature:
+  ros__parameters:
+    # Independent OCPU/1 receiver. This is processor temperature, never the
+    # OIMU/1 IMU temperature field.
+    bind_address: 0.0.0.0
+    port: 5620
+    samples: 10
+    # Finite N fails nonzero after this long without a valid packet.
+    # Explicit samples: 0 is continuous reception with no idle deadline.
+    idle_timeout_sec: 30.0
+    topic: /orbvi/raw/temperature
+    source: cpu
