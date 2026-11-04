@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites name="orbvi_4p_bridge.test_imu_bridge_launch" tests="1" failures="0" errors="0" time="0.381"><testsuite name="orbvi_4p_bridge.test_imu_bridge_launch.launch_tests" tests="1" failures="0" errors="0" skipped="0" time="0.381"><testcase classname="orbvi_4p_bridge.TestImuBridge" name="test_golden_and_reject_bad_crc" time="0.381" /></testsuite></testsuites>

@@ -30,6 +30,12 @@ def generate_launch_description():
         DeclareLaunchArgument('imu_source_address', default_value=''),
         DeclareLaunchArgument('imu_port', default_value='5600'),
         DeclareLaunchArgument('imu_frame_id', default_value='orbvi_imu'),
+        DeclareLaunchArgument('timestamp_source', default_value='host'),
+        DeclareLaunchArgument('publish_capture_metadata', default_value='false'),
+        DeclareLaunchArgument('imu_subscription_queue_capacity', default_value='0'),
+        DeclareLaunchArgument('publish_queue_depth', default_value='5'),
+        DeclareLaunchArgument('imu_publish_queue_depth', default_value='0'),
+        DeclareLaunchArgument('publish_reliability', default_value='best_effort'),
         Node(
             package='orbvi_4p_bridge',
             executable='orbvi_bridge_node',
@@ -48,6 +54,16 @@ def generate_launch_description():
                 'imu_source_address': LaunchConfiguration('imu_source_address'),
                 'imu_port': ParameterValue(LaunchConfiguration('imu_port'), value_type=int),
                 'imu_frame_id': LaunchConfiguration('imu_frame_id'),
+                'timestamp_source': LaunchConfiguration('timestamp_source'),
+                'publish_capture_metadata': ParameterValue(
+                    LaunchConfiguration('publish_capture_metadata'), value_type=bool),
+                'imu_subscription_queue_capacity': ParameterValue(
+                    LaunchConfiguration('imu_subscription_queue_capacity'), value_type=int),
+                'publish_queue_depth': ParameterValue(
+                    LaunchConfiguration('publish_queue_depth'), value_type=int),
+                'imu_publish_queue_depth': ParameterValue(
+                    LaunchConfiguration('imu_publish_queue_depth'), value_type=int),
+                'publish_reliability': LaunchConfiguration('publish_reliability'),
             }],
         ),
     ])

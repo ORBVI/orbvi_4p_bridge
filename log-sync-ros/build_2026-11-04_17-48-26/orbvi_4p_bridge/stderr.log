@@ -1,0 +1,10 @@
+/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/src/image_stream_node.cpp:643:70: warning: converting to ‘sensor_msgs::msg::CameraInfo_<std::allocator<void> >’ from initializer list would use explicit constructor ‘sensor_msgs::msg::CameraInfo_<ContainerAllocator>::CameraInfo_(rosidl_runtime_cpp::MessageInitialization) [with ContainerAllocator = std::allocator<void>]’
+  643 |   std::array<sensor_msgs::msg::CameraInfo, kMaxCameras> calibration_{};
+      |                                                                      ^
+/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/src/image_stream_node.cpp:643:70: note: in C++11 and above a default constructor can be explicit
+/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/src/image_stream_node.cpp:643:70: warning: converting to ‘sensor_msgs::msg::CameraInfo_<std::allocator<void> >’ from initializer list would use explicit constructor ‘sensor_msgs::msg::CameraInfo_<ContainerAllocator>::CameraInfo_(rosidl_runtime_cpp::MessageInitialization) [with ContainerAllocator = std::allocator<void>]’
+/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/src/image_stream_node.cpp:643:70: note: in C++11 and above a default constructor can be explicit
+/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/src/image_stream_node.cpp:643:70: warning: converting to ‘sensor_msgs::msg::CameraInfo_<std::allocator<void> >’ from initializer list would use explicit constructor ‘sensor_msgs::msg::CameraInfo_<ContainerAllocator>::CameraInfo_(rosidl_runtime_cpp::MessageInitialization) [with ContainerAllocator = std::allocator<void>]’
+/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/src/image_stream_node.cpp:643:70: note: in C++11 and above a default constructor can be explicit
+/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/src/image_stream_node.cpp:643:70: warning: converting to ‘sensor_msgs::msg::CameraInfo_<std::allocator<void> >’ from initializer list would use explicit constructor ‘sensor_msgs::msg::CameraInfo_<ContainerAllocator>::CameraInfo_(rosidl_runtime_cpp::MessageInitialization) [with ContainerAllocator = std::allocator<void>]’
+/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/src/image_stream_node.cpp:643:70: note: in C++11 and above a default constructor can be explicit

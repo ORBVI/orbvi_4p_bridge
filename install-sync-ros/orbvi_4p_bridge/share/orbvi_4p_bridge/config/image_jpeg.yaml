@@ -1,0 +1,23 @@
+orbvi_image_stream:
+  ros__parameters:
+    # A JPEG camera is not connected and receives no OCTL START until its
+    # CompressedImage topic has at least one subscriber.
+    runtime_mode: jpeg
+    host: ''
+    base_port: 5610
+    camera_mask: 15
+    frames_per_camera: 10
+    idle_timeout_sec: 30.0
+    # Reliable ROS writer with bounded history; still compatible with best-effort readers.
+    publish_queue_depth: 16
+    drain_min_sec: 3.0
+    drain_timeout_sec: 12.0
+    connect_timeout_ms: 10000
+    read_timeout_ms: 3000
+    topic_namespace: /orbvi/raw
+    frame_id_prefix: orbvi_camera_
+    # Add only real standard ROS camera calibration YAML files here.
+    calibration_0: ''
+    calibration_1: ''
+    calibration_2: ''
+    calibration_3: ''

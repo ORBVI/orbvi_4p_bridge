@@ -1,0 +1,1 @@
+['-DORBVI_SDK_SOURCE_DIR=/home/k8plus/src/orbvi-4p/orbvi-4p-sdk', '-DBUILD_TESTING=ON']

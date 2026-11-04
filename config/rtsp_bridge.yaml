@@ -16,6 +16,11 @@ orbvi_4p_bridge:
     imu_frame_id: orbvi_imu
     callback_queue_capacity: 8
     subscription_queue_capacity: 8
+    imu_subscription_queue_capacity: 0
     publish_queue_depth: 5
+    imu_publish_queue_depth: 0
+    publish_reliability: best_effort
+    timestamp_source: host
+    publish_capture_metadata: false
     topic_namespace: /orbvi/raw
     frame_id_prefix: orbvi_camera_

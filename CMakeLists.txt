@@ -19,9 +19,18 @@ if(EXISTS "/usr/bin/python3")
 endif()
 
 find_package(ament_cmake REQUIRED)
+find_package(builtin_interfaces REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
 find_package(yaml-cpp REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/FrameMetadata.msg"
+  "msg/ImuMetadata.msg"
+  DEPENDENCIES std_msgs)
+rosidl_get_typesupport_target(orbvi_typesupport ${PROJECT_NAME} rosidl_typesupport_cpp)
 
 # The SDK is intentionally injected either through an installed CMake package
 # or through an explicit source tree. The latter is useful while the SDK is
@@ -60,8 +69,12 @@ else()
 endif()
 
 add_executable(orbvi_bridge_node src/bridge_node.cpp)
-target_link_libraries(orbvi_bridge_node ${ORBVI_SDK_TARGET})
-ament_target_dependencies(orbvi_bridge_node rclcpp sensor_msgs)
+target_link_libraries(orbvi_bridge_node ${ORBVI_SDK_TARGET} ${orbvi_typesupport})
+ament_target_dependencies(orbvi_bridge_node builtin_interfaces rclcpp sensor_msgs std_msgs)
+
+add_executable(orbvi_capture_check tools/capture_check.cpp)
+target_link_libraries(orbvi_capture_check ${orbvi_typesupport})
+ament_target_dependencies(orbvi_capture_check rclcpp sensor_msgs std_msgs)
 
 add_executable(orbvi_image_stream_node src/image_stream_node.cpp)
 target_link_libraries(orbvi_image_stream_node ${ORBVI_SDK_TARGET} yaml-cpp)
@@ -81,6 +94,7 @@ endif()
 
 install(TARGETS
   orbvi_bridge_node
+  orbvi_capture_check
   orbvi_image_stream_node
   orbvi_temperature_node
   DESTINATION lib/${PROJECT_NAME})
@@ -92,12 +106,18 @@ if(BUILD_TESTING)
   find_package(Python3 REQUIRED COMPONENTS Interpreter)
   add_launch_test(test/test_fake_bridge_launch.py TIMEOUT 30)
   add_launch_test(test/test_imu_bridge_launch.py TIMEOUT 30)
+  add_launch_test(test/test_capture_bridge_launch.py TIMEOUT 30)
 
   add_executable(test_frame_image test/test_frame_image.cpp)
   target_include_directories(test_frame_image PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
   target_link_libraries(test_frame_image ${ORBVI_SDK_TARGET})
   ament_target_dependencies(test_frame_image sensor_msgs)
   add_test(NAME frame_image COMMAND test_frame_image)
+
+  add_executable(test_capture_helpers test/test_capture_helpers.cpp)
+  target_include_directories(test_capture_helpers PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+  ament_target_dependencies(test_capture_helpers builtin_interfaces)
+  add_test(NAME capture_helpers COMMAND test_capture_helpers)
 
   add_test(NAME image_fail_closed_runtime
     COMMAND $<TARGET_FILE:orbvi_image_stream_node> --ros-args
@@ -188,10 +208,19 @@ if(BUILD_TESTING)
   set_tests_properties(imu_requires_opt_in imu_rejects_zero_port
     fake_rejects_real_imu PROPERTIES WILL_FAIL TRUE TIMEOUT 10)
 
+  add_test(NAME rejects_invalid_timestamp_source
+    COMMAND $<TARGET_FILE:orbvi_bridge_node> --ros-args -p runtime_mode:=fake
+      -p timestamp_source:=invalid)
+  set_tests_properties(rejects_invalid_timestamp_source PROPERTIES WILL_FAIL TRUE TIMEOUT 10)
+  add_test(NAME rejects_invalid_publish_reliability
+    COMMAND $<TARGET_FILE:orbvi_bridge_node> --ros-args -p runtime_mode:=fake
+      -p publish_reliability:=invalid)
+  set_tests_properties(rejects_invalid_publish_reliability PROPERTIES WILL_FAIL TRUE TIMEOUT 10)
+
   set_tests_properties(fail_closed_runtime PROPERTIES
     WILL_FAIL TRUE
     TIMEOUT 10)
 endif()
 
-ament_export_dependencies(rclcpp sensor_msgs)
+ament_export_dependencies(builtin_interfaces rclcpp sensor_msgs std_msgs rosidl_default_runtime)
 ament_package()

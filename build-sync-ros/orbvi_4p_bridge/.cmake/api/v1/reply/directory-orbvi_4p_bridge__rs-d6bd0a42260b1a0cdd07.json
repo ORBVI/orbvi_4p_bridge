@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "orbvi_4p_bridge__rs",
+		"source" : "build-sync-ros/orbvi_4p_bridge/orbvi_4p_bridge__rs"
+	}
+}

@@ -1,0 +1,17 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.cpp.o"
+  "CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.cpp.o.d"
+  "CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.cpp.o"
+  "CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.cpp.o.d"
+  "liborbvi_4p_bridge__rosidl_typesupport_introspection_cpp.pdb"
+  "liborbvi_4p_bridge__rosidl_typesupport_introspection_cpp.so"
+  "rosidl_typesupport_introspection_cpp/orbvi_4p_bridge/msg/detail/frame_metadata__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.cpp"
+  "rosidl_typesupport_introspection_cpp/orbvi_4p_bridge/msg/detail/imu_metadata__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_introspection_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

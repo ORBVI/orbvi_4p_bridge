@@ -1,0 +1,24 @@
+orbvi_image_stream:
+  ros__parameters:
+    # Raw NV12 starts selected cameras immediately; unlike JPEG, Image
+    # subscribers are not a START gate. No automatic reconnect. Host is
+    # intentionally empty for fail-closed launch.
+    runtime_mode: nv12
+    host: ''
+    base_port: 5610
+    camera_mask: 15
+    frames_per_camera: 10
+    idle_timeout_sec: 30.0
+    # Reliable ROS writer with bounded history; still compatible with best-effort readers.
+    publish_queue_depth: 16
+    drain_min_sec: 3.0
+    drain_timeout_sec: 12.0
+    connect_timeout_ms: 10000
+    read_timeout_ms: 3000
+    topic_namespace: /orbvi/raw
+    frame_id_prefix: orbvi_camera_
+    # Add only real standard ROS camera calibration YAML files here.
+    calibration_0: ''
+    calibration_1: ''
+    calibration_2: ''
+    calibration_3: ''

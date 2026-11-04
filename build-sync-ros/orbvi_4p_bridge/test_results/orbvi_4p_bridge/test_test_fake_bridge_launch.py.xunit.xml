@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites name="orbvi_4p_bridge.test_fake_bridge_launch" tests="1" failures="0" errors="0" time="0.141"><testsuite name="orbvi_4p_bridge.test_fake_bridge_launch.launch_tests" tests="1" failures="0" errors="0" skipped="0" time="0.141"><testcase classname="orbvi_4p_bridge.TestFourCameraFakeImages" name="test_each_camera_has_one_mono8_image" time="0.141" /></testsuite></testsuites>

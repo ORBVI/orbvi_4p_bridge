@@ -1,0 +1,4 @@
+msg/FrameMetadata.idl
+msg/FrameMetadata.msg
+msg/ImuMetadata.idl
+msg/ImuMetadata.msg

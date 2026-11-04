@@ -1,5 +1,6 @@
 #include <array>
 #include <atomic>
+#include <chrono>
 #include <cmath>
 #include <cstddef>
 #include <cstdint>
@@ -17,6 +18,9 @@
 #include "orbvi_sdk/fake.hpp"
 #include "orbvi_sdk/rtsp.hpp"
 #include "orbvi_sdk/udp_imu.hpp"
+#include "orbvi_4p_bridge/msg/frame_metadata.hpp"
+#include "orbvi_4p_bridge/msg/imu_metadata.hpp"
+#include "capture_helpers.hpp"
 #include "frame_image.hpp"
 
 namespace {
@@ -46,7 +50,13 @@ class BridgeNode final : public rclcpp::Node {
         declare_parameter<std::int64_t>("callback_queue_capacity", 8);
     subscription_queue_capacity_ =
         declare_parameter<std::int64_t>("subscription_queue_capacity", 8);
+    imu_subscription_queue_capacity_ =
+        declare_parameter<std::int64_t>("imu_subscription_queue_capacity", 0);
     publish_queue_depth_ = declare_parameter<std::int64_t>("publish_queue_depth", 5);
+    imu_publish_queue_depth_ = declare_parameter<std::int64_t>("imu_publish_queue_depth", 0);
+    publish_reliability_ = declare_parameter<std::string>("publish_reliability", "best_effort");
+    timestamp_source_ = declare_parameter<std::string>("timestamp_source", "host");
+    publish_capture_metadata_ = declare_parameter<bool>("publish_capture_metadata", false);
     topic_namespace_ = declare_parameter<std::string>("topic_namespace", "/orbvi/raw");
     frame_id_prefix_ = declare_parameter<std::string>("frame_id_prefix", "orbvi_camera_");
   }
@@ -114,8 +124,17 @@ class BridgeNode final : public rclcpp::Node {
       return false;
     }
     if (callback_queue_capacity_ <= 0 || subscription_queue_capacity_ <= 0 ||
-        publish_queue_depth_ <= 0) {
-      error = "queue capacities must be greater than zero";
+        imu_subscription_queue_capacity_ < 0 ||
+        publish_queue_depth_ <= 0 || imu_publish_queue_depth_ < 0) {
+      error = "queue capacities must be positive; IMU-specific capacities may be zero";
+      return false;
+    }
+    if (publish_reliability_ != "best_effort" && publish_reliability_ != "reliable") {
+      error = "publish_reliability must be best_effort or reliable";
+      return false;
+    }
+    if (timestamp_source_ != "host" && timestamp_source_ != "board") {
+      error = "timestamp_source must be host or board";
       return false;
     }
     if (frame_id_prefix_.empty()) {
@@ -134,7 +153,11 @@ class BridgeNode final : public rclcpp::Node {
       create_publishers();
       if (imu_enabled_) {
         imu_publisher_ = create_publisher<sensor_msgs::msg::Imu>(
-            topic_namespace_ + "/imu", sensor_qos());
+            topic_namespace_ + "/imu", sensor_qos(imu_publish_queue_depth_));
+        if (publish_capture_metadata_) {
+          imu_metadata_publisher_ = create_publisher<orbvi_4p_bridge::msg::ImuMetadata>(
+              topic_namespace_ + "/imu/metadata", sensor_qos(imu_publish_queue_depth_));
+        }
         orbvi_sdk::UdpImuConfig imu_config;
         imu_config.bind_address = imu_bind_address_;
         imu_config.source_address = imu_source_address_;
@@ -146,7 +169,9 @@ class BridgeNode final : public rclcpp::Node {
         };
         auto imu_subscription = imu_client_.subscribe(
             orbvi_sdk::SubscribeOptions{
-                static_cast<std::size_t>(subscription_queue_capacity_),
+                static_cast<std::size_t>(imu_subscription_queue_capacity_ == 0
+                                             ? subscription_queue_capacity_
+                                             : imu_subscription_queue_capacity_),
                 orbvi_sdk::DropPolicy::drop_oldest}, std::move(imu_callbacks));
         if (!imu_subscription.ok()) {
           error = "IMU SDK subscribe failed: " + imu_subscription.status().to_string();
@@ -170,6 +195,7 @@ class BridgeNode final : public rclcpp::Node {
 
       if (runtime_mode_ == "udp_imu") {
         RCLCPP_INFO(get_logger(), "UDP IMU -> %s/imu", topic_namespace_.c_str());
+        start_diagnostics();
         return true;
       }
       if (runtime_mode_ == "fake") {
@@ -247,6 +273,7 @@ class BridgeNode final : public rclcpp::Node {
     if (imu_enabled_) {
       RCLCPP_INFO(get_logger(), "UDP IMU -> %s/imu", topic_namespace_.c_str());
     }
+    start_diagnostics();
     return true;
   }
 
@@ -283,11 +310,32 @@ class BridgeNode final : public rclcpp::Node {
   }
 
  private:
-  rclcpp::QoS sensor_qos() const {
-    return
-        rclcpp::QoS(rclcpp::KeepLast(static_cast<std::size_t>(publish_queue_depth_)))
-            .best_effort()
-            .durability_volatile();
+  void start_diagnostics() {
+    diagnostics_timer_ = create_wall_timer(std::chrono::seconds(5), [this]() {
+      const auto image_drops = subscription_.valid() ? subscription_.stats().dropped : 0U;
+      const auto imu_drops = imu_subscription_.valid() ? imu_subscription_.stats().dropped : 0U;
+      const auto imu_gaps = imu_enabled_ ? imu_client_.diagnostics().imu_sequence_gaps : 0U;
+      if (image_drops != reported_image_drops_ || imu_drops != reported_imu_drops_ ||
+          imu_gaps != reported_imu_gaps_) {
+        RCLCPP_WARN(get_logger(),
+                    "SDK loss counters: image_callback_drops=%llu imu_callback_drops=%llu "
+                    "imu_input_sequence_gaps=%llu",
+                    static_cast<unsigned long long>(image_drops),
+                    static_cast<unsigned long long>(imu_drops),
+                    static_cast<unsigned long long>(imu_gaps));
+        reported_image_drops_ = image_drops;
+        reported_imu_drops_ = imu_drops;
+        reported_imu_gaps_ = imu_gaps;
+      }
+    });
+  }
+
+  rclcpp::QoS sensor_qos(std::int64_t depth = 0) const {
+    const auto capacity = depth == 0 ? publish_queue_depth_ : depth;
+    auto qos = rclcpp::QoS(rclcpp::KeepLast(static_cast<std::size_t>(capacity)));
+    if (publish_reliability_ == "reliable") qos.reliable();
+    else qos.best_effort();
+    return qos.durability_volatile();
   }
 
   void create_publishers() {
@@ -296,16 +344,19 @@ class BridgeNode final : public rclcpp::Node {
       const std::string topic =
           topic_namespace_ + "/camera_" + std::to_string(index) + "/image";
       publishers_[index] = create_publisher<sensor_msgs::msg::Image>(topic, qos);
+      if (publish_capture_metadata_) {
+        metadata_publishers_[index] = create_publisher<orbvi_4p_bridge::msg::FrameMetadata>(
+            topic_namespace_ + "/camera_" + std::to_string(index) + "/metadata", qos);
+      }
     }
   }
 
   void publish_imu(const orbvi_sdk::ImuEvent& event) {
     const auto& sample = event.sample;
-    // SDK receive time is host CLOCK_REALTIME; board/IIO timestamps are not Unix time.
-    constexpr std::int64_t kBillion = 1000000000LL;
-    const auto seconds = sample.timestamp_ns / kBillion;
-    if (!sample.crc_valid || sample.timestamp_ns <= 0 ||
-        seconds > std::numeric_limits<std::int32_t>::max() ||
+    builtin_interfaces::msg::Time stamp;
+    const auto timestamp = timestamp_source_ == "board" ? sample.sensor_timestamp_ns
+                                                           : sample.timestamp_ns;
+    if (!sample.crc_valid || !orbvi_bridge::timestamp_from_ns(timestamp, stamp) ||
         !std::isfinite(sample.accel_x_mps2) ||
         !std::isfinite(sample.accel_y_mps2) ||
         !std::isfinite(sample.accel_z_mps2) ||
@@ -316,8 +367,7 @@ class BridgeNode final : public rclcpp::Node {
       return;
     }
     auto message = sensor_msgs::msg::Imu();
-    message.header.stamp.sec = static_cast<std::int32_t>(seconds);
-    message.header.stamp.nanosec = static_cast<std::uint32_t>(sample.timestamp_ns % kBillion);
+    message.header.stamp = stamp;
     message.header.frame_id = imu_frame_id_;
     message.orientation_covariance[0] = -1.0;  // No orientation estimate.
     message.angular_velocity.x = sample.gyro_x_radps;
@@ -327,6 +377,14 @@ class BridgeNode final : public rclcpp::Node {
     message.linear_acceleration.y = sample.accel_y_mps2;
     message.linear_acceleration.z = sample.accel_z_mps2;
     imu_publisher_->publish(message);
+    if (imu_metadata_publisher_) {
+      orbvi_4p_bridge::msg::ImuMetadata metadata;
+      metadata.header = message.header;
+      metadata.sequence = sample.sequence;
+      metadata.accel_timestamp_ns = sample.accel_timestamp_ns;
+      metadata.gyro_timestamp_ns = sample.gyro_timestamp_ns;
+      imu_metadata_publisher_->publish(metadata);
+    }
   }
 
   void publish_frame(const orbvi_sdk::FrameView& view) {
@@ -349,6 +407,14 @@ class BridgeNode final : public rclcpp::Node {
                            view.camera_index);
       return;
     }
+    builtin_interfaces::msg::Time capture_stamp;
+    if (timestamp_source_ == "board" &&
+        !orbvi_bridge::timestamp_from_ns(view.sensor_timestamp_ns, capture_stamp)) {
+      RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 1000,
+                           "dropping camera_%u frame without a valid capture timestamp",
+                           view.camera_index);
+      return;
+    }
     auto message = std::make_unique<sensor_msgs::msg::Image>();
     std::string error;
     if (!orbvi_bridge::frame_to_image(view, *message, error)) {
@@ -357,10 +423,19 @@ class BridgeNode final : public rclcpp::Node {
                            view.camera_index, error.c_str());
       return;
     }
-    // RTSP PTS and Fake timestamps do not establish a Unix/sensor clock.
-    // Stamp on receipt using the host ROS clock; no hard-sync claim.
-    message->header.stamp = now();
+    if (timestamp_source_ == "board") {
+      message->header.stamp = capture_stamp;
+    } else {
+      message->header.stamp = now();
+    }
     message->header.frame_id = frame_id_prefix_ + std::to_string(view.camera_index);
+    if (metadata_publishers_[view.camera_index] && view.sensor_timestamp_ns > 0) {
+      orbvi_4p_bridge::msg::FrameMetadata metadata;
+      metadata.header = message->header;
+      metadata.sequence = view.sequence;
+      metadata.sensor_timestamp_ns = view.sensor_timestamp_ns;
+      metadata_publishers_[view.camera_index]->publish(metadata);
+    }
     publishers_[view.camera_index]->publish(std::move(message));
   }
 
@@ -380,12 +455,24 @@ class BridgeNode final : public rclcpp::Node {
   std::int64_t frame_stride_{0};
   std::int64_t callback_queue_capacity_{0};
   std::int64_t subscription_queue_capacity_{0};
+  std::int64_t imu_subscription_queue_capacity_{0};
   std::int64_t publish_queue_depth_{0};
+  std::int64_t imu_publish_queue_depth_{0};
+  std::string publish_reliability_;
+  std::string timestamp_source_;
+  bool publish_capture_metadata_{false};
   std::string topic_namespace_;
   std::string frame_id_prefix_;
   std::array<rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr, kCameraCount>
       publishers_{};
+  std::array<rclcpp::Publisher<orbvi_4p_bridge::msg::FrameMetadata>::SharedPtr, kCameraCount>
+      metadata_publishers_{};
   rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_publisher_;
+  rclcpp::Publisher<orbvi_4p_bridge::msg::ImuMetadata>::SharedPtr imu_metadata_publisher_;
+  rclcpp::TimerBase::SharedPtr diagnostics_timer_;
+  std::uint64_t reported_image_drops_{0U};
+  std::uint64_t reported_imu_drops_{0U};
+  std::uint64_t reported_imu_gaps_{0U};
   orbvi_sdk::Client client_;
   orbvi_sdk::SubscriptionHandle subscription_;
   orbvi_sdk::Client imu_client_;

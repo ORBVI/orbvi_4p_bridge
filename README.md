@@ -17,6 +17,19 @@ RTSP 启动命令增加 `image_format:=bgr8` 可发布彩色 `sensor_msgs/Image`
 省略参数时保持原有 `mono8`。彩色模式要求源 RTSP 视频含颜色信息，
 图像 Topic 名称及 IMU 设置不变。请使用支持 BGR8 的 SDK 版本构建 Bridge。
 
+## 四路同步采集
+
+使用包含外触发元数据的 SDK 源码构建 Bridge，并在板端启动 `sensor_demo --external-sync`：
+
+```bash
+ros2 launch orbvi_4p_bridge sync_capture.launch.py board_ip:=板卡IP
+ros2 run orbvi_4p_bridge orbvi_capture_check 60
+```
+
+该模式发布 `/orbvi/raw/camera_0..3/image`、对应的 `metadata`、`/orbvi/raw/imu` 和 `/orbvi/raw/imu/metadata`。图像与元数据通过 `header.stamp` 对应；IMU 元数据包含加速度和角速度各自的 IIO 时间戳。
+
+同步模式的时间戳沿用板端采集时钟，不是电脑系统时间，也不代表已经标定的曝光或 IMU 芯片内部采样时刻。原有 `rtsp_bridge.launch.py` 默认仍使用电脑时间和原有 QoS。
+
 ## 源码目录
 
 - [`src/`](src/)：ROS 2 节点。

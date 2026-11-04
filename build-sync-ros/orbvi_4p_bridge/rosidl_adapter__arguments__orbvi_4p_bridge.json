@@ -1,0 +1,7 @@
+{
+  "package_name": "orbvi_4p_bridge",
+  "non_idl_tuples": [
+    "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge:msg/FrameMetadata.msg",
+    "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge:msg/ImuMetadata.msg"
+  ]
+}

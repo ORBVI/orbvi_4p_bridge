@@ -1,0 +1,365 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.21 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found visualization_msgs: 4.9.2 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Found ament_cmake_ros: 0.10.1 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+-- Found PythonExtra: .so  
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+-- Checking for modules 'libavformat;libavcodec;libavutil;libswscale'
+--   Found libavformat, version 58.76.100
+--   Found libavcodec, version 58.134.100
+--   Found libavutil, version 56.70.100
+--   Found libswscale, version 5.9.100
+-- Found launch_testing_ament_cmake: 1.0.15 (/opt/ros/humble/share/launch_testing_ament_cmake/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/build-sync-ros/orbvi_4p_bridge
+[  1%] Generating C code for ROS interfaces
+[  4%] Generating C++ code for ROS interfaces
+[  4%] Generating Rust code for ROS interfaces
+[  8%] Building CXX object orbvi-4p-sdk/CMakeFiles/orbvi_sdk_shared.dir/src/client/client.cpp.o
+[  8%] Building CXX object CMakeFiles/test_capture_helpers.dir/test/test_capture_helpers.cpp.o
+[  9%] Building CXX object orbvi-4p-sdk/CMakeFiles/orbvi_sdk_shared.dir/src/frame.cpp.o
+[ 11%] Building CXX object orbvi-4p-sdk/CMakeFiles/orbvi_sdk_shared.dir/src/runtime/fake_runtime.cpp.o
+[ 13%] Building CXX object orbvi-4p-sdk/CMakeFiles/orbvi_sdk_shared.dir/src/runtime/image_stream_runtime.cpp.o
+[ 14%] Building CXX object orbvi-4p-sdk/CMakeFiles/orbvi_sdk_shared.dir/src/runtime/replay_runtime.cpp.o
+[ 18%] Building CXX object orbvi-4p-sdk/CMakeFiles/orbvi_sdk_shared.dir/src/runtime/rtsp_runtime.cpp.o
+[ 18%] Building CXX object orbvi-4p-sdk/CMakeFiles/orbvi_sdk_shared.dir/src/runtime/temperature_stream_runtime.cpp.o
+[ 19%] Building CXX object orbvi-4p-sdk/CMakeFiles/orbvi_sdk_shared.dir/src/runtime/udp_imu_runtime.cpp.o
+[ 21%] Building CXX object orbvi-4p-sdk/CMakeFiles/orbvi_sdk_shared.dir/src/runtime/unsupported_runtime.cpp.o
+[ 22%] Building CXX object orbvi-4p-sdk/CMakeFiles/orbvi_sdk_shared.dir/src/status.cpp.o
+[ 22%] Built target ament_cmake_python_copy_orbvi_4p_bridge
+[ 22%] Built target orbvi_4p_bridge__rs
+running egg_info
+creating orbvi_4p_bridge.egg-info
+writing orbvi_4p_bridge.egg-info/PKG-INFO
+writing dependency_links to orbvi_4p_bridge.egg-info/dependency_links.txt
+writing top-level names to orbvi_4p_bridge.egg-info/top_level.txt
+writing manifest file 'orbvi_4p_bridge.egg-info/SOURCES.txt'
+reading manifest file 'orbvi_4p_bridge.egg-info/SOURCES.txt'
+writing manifest file 'orbvi_4p_bridge.egg-info/SOURCES.txt'
+[ 22%] Built target ament_cmake_python_build_orbvi_4p_bridge_egg
+[ 22%] Built target orbvi_4p_bridge__cpp
+[ 26%] Generating C++ type support for eProsima Fast-RTPS
+[ 26%] Generating C++ type support dispatch for ROS interfaces
+[ 27%] Generating C++ introspection for ROS interfaces
+[ 31%] Building C object CMakeFiles/orbvi_4p_bridge__rosidl_generator_c.dir/rosidl_generator_c/orbvi_4p_bridge/msg/detail/frame_metadata__functions.c.o
+[ 31%] Building C object CMakeFiles/orbvi_4p_bridge__rosidl_generator_c.dir/rosidl_generator_c/orbvi_4p_bridge/msg/detail/imu_metadata__functions.c.o
+[ 32%] Linking C shared library liborbvi_4p_bridge__rosidl_generator_c.so
+[ 32%] Built target orbvi_4p_bridge__rosidl_generator_c
+[ 37%] Generating C type support for eProsima Fast-RTPS
+[ 37%] Generating C introspection for ROS interfaces
+[ 37%] Generating C type support dispatch for ROS interfaces
+[ 39%] Building CXX object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/orbvi_4p_bridge/msg/frame_metadata__type_support.cpp.o
+[ 42%] Building CXX object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/orbvi_4p_bridge/msg/imu_metadata__type_support.cpp.o
+[ 42%] Building CXX object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.cpp.o
+[ 44%] Building CXX object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.cpp.o
+[ 45%] Building CXX object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/orbvi_4p_bridge/msg/detail/dds_fastrtps/frame_metadata__type_support.cpp.o
+[ 47%] Building CXX object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/orbvi_4p_bridge/msg/detail/frame_metadata__type_support_c.cpp.o
+[ 49%] Building C object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.c.o
+[ 50%] Building C object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.c.o
+[ 52%] Building CXX object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_c.dir/rosidl_typesupport_c/orbvi_4p_bridge/msg/frame_metadata__type_support.cpp.o
+[ 54%] Building CXX object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/orbvi_4p_bridge/msg/detail/imu_metadata__type_support_c.cpp.o
+[ 55%] Linking CXX shared library liborbvi_4p_bridge__rosidl_typesupport_cpp.so
+[ 57%] Linking C shared library liborbvi_4p_bridge__rosidl_typesupport_introspection_c.so
+[ 59%] Building CXX object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_c.dir/rosidl_typesupport_c/orbvi_4p_bridge/msg/imu_metadata__type_support.cpp.o
+[ 60%] Linking CXX shared library liborbvi_4p_bridge__rosidl_typesupport_c.so
+[ 60%] Built target orbvi_4p_bridge__rosidl_typesupport_cpp
+[ 62%] Building CXX object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/orbvi_4p_bridge/msg/detail/dds_fastrtps/imu_metadata__type_support.cpp.o
+[ 62%] Built target orbvi_4p_bridge__rosidl_typesupport_introspection_c
+[ 63%] Linking CXX executable test_capture_helpers
+[ 63%] Built target orbvi_4p_bridge__rosidl_typesupport_c
+[ 65%] Linking CXX shared library liborbvi_4p_bridge__rosidl_typesupport_introspection_cpp.so
+[ 65%] Built target orbvi_4p_bridge__rosidl_typesupport_introspection_cpp
+[ 65%] Built target test_capture_helpers
+[ 67%] Linking CXX shared library liborbvi_4p_bridge__rosidl_typesupport_fastrtps_c.so
+[ 67%] Built target orbvi_4p_bridge__rosidl_typesupport_fastrtps_c
+[ 68%] Linking CXX shared library liborbvi_4p_bridge__rosidl_typesupport_fastrtps_cpp.so
+[ 68%] Built target orbvi_4p_bridge__rosidl_typesupport_fastrtps_cpp
+[ 68%] Built target orbvi_4p_bridge
+[ 70%] Generating Python code for ROS interfaces
+[ 72%] Linking CXX shared library liborbvi_sdk.so
+[ 72%] Built target orbvi_sdk_shared
+[ 72%] Built target orbvi_4p_bridge__py
+[ 77%] Building CXX object CMakeFiles/orbvi_temperature_node.dir/src/temperature_node.cpp.o
+[ 77%] Building CXX object CMakeFiles/orbvi_bridge_node.dir/src/bridge_node.cpp.o
+[ 77%] Building CXX object CMakeFiles/orbvi_image_stream_node.dir/src/image_stream_node.cpp.o
+[ 78%] Building C object CMakeFiles/orbvi_4p_bridge__rosidl_generator_py.dir/rosidl_generator_py/orbvi_4p_bridge/msg/_frame_metadata_s.c.o
+[ 80%] Building C object CMakeFiles/orbvi_4p_bridge__rosidl_generator_py.dir/rosidl_generator_py/orbvi_4p_bridge/msg/_imu_metadata_s.c.o
+[ 81%] Building CXX object CMakeFiles/test_frame_image.dir/test/test_frame_image.cpp.o
+[ 83%] Linking C shared library rosidl_generator_py/orbvi_4p_bridge/liborbvi_4p_bridge__rosidl_generator_py.so
+[ 83%] Built target orbvi_4p_bridge__rosidl_generator_py
+[ 88%] Building C object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/orbvi_4p_bridge/_orbvi_4p_bridge_s.ep.rosidl_typesupport_c.c.o
+[ 88%] Building C object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/orbvi_4p_bridge/_orbvi_4p_bridge_s.ep.rosidl_typesupport_introspection_c.c.o
+[ 88%] Building C object CMakeFiles/orbvi_4p_bridge__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/orbvi_4p_bridge/_orbvi_4p_bridge_s.ep.rosidl_typesupport_fastrtps_c.c.o
+[ 93%] Linking C shared library rosidl_generator_py/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[ 93%] Linking C shared library rosidl_generator_py/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[ 93%] Linking C shared library rosidl_generator_py/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[ 93%] Built target orbvi_4p_bridge__rosidl_typesupport_introspection_c__pyext
+[ 93%] Built target orbvi_4p_bridge__rosidl_typesupport_fastrtps_c__pyext
+[ 93%] Built target orbvi_4p_bridge__rosidl_typesupport_c__pyext
+[ 95%] Linking CXX executable test_frame_image
+[ 95%] Built target test_frame_image
+[ 96%] Linking CXX executable orbvi_temperature_node
+[ 96%] Built target orbvi_temperature_node
+[ 98%] Linking CXX executable orbvi_image_stream_node
+[100%] Linking CXX executable orbvi_bridge_node
+[100%] Built target orbvi_image_stream_node
+[100%] Built target orbvi_bridge_node
+-- Install configuration: ""
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/ament_index/resource_index/rosidl_interfaces/orbvi_4p_bridge
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/rosidl_generator_c__visibility_control.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__struct.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__functions.c
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__functions.c
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__struct.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__functions.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__functions.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/frame_metadata.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/imu_metadata.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/library_path.sh
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/library_path.dsv
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_generator_c.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_generator_c.so" to ""
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_fastrtps_c.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_fastrtps_c.so" to ""
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/frame_metadata.hpp
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__traits.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__builder.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__struct.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__builder.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__struct.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__traits.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/imu_metadata.hpp
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/dds_fastrtps
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_fastrtps_cpp.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__rosidl_typesupport_introspection_c.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.c
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.c
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__rosidl_typesupport_introspection_c.h
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_introspection_c.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_c.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_c.so" to ""
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.cpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.cpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_introspection_cpp.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_cpp.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_cpp.so" to ""
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/pythonpath.sh
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/pythonpath.dsv
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge-0.1.0-py3.10.egg-info
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge-0.1.0-py3.10.egg-info/dependency_links.txt
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge-0.1.0-py3.10.egg-info/PKG-INFO
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge-0.1.0-py3.10.egg-info/SOURCES.txt
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge-0.1.0-py3.10.egg-info/top_level.txt
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/_imu_metadata.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/_frame_metadata.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/_frame_metadata_s.c
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/__init__.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/_imu_metadata_s.c
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/_orbvi_4p_bridge_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/_orbvi_4p_bridge_s.ep.rosidl_typesupport_introspection_c.c
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/__init__.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/liborbvi_4p_bridge__rosidl_generator_py.so
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/_orbvi_4p_bridge_s.ep.rosidl_typesupport_c.c
+Listing '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge'...
+Compiling '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/__init__.py'...
+Listing '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg'...
+Compiling '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/__init__.py'...
+Compiling '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/_frame_metadata.py'...
+Compiling '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/_imu_metadata.py'...
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_generator_py.so
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_generator_py.so" to ""
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/src
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/src/msg.rs
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/src/msg
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/src/msg/rmw.rs
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/src/lib.rs
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/build.rs
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/Cargo.toml
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/msg/FrameMetadata.idl
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/msg/ImuMetadata.idl
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/msg/FrameMetadata.msg
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/msg/ImuMetadata.msg
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_sdk.so.0.1.0
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_sdk.so.0
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_sdk.so
+-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/device.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/contract.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/replay.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/compressed_frame.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/rtsp.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/imu.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/diagnostics.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/client.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/image_stream.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/udp_imu.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/sync.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/subscription.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/transport.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/frame.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/status.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/runtime.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/fake.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/temperature_stream.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/export.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/options.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/version.hpp
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/cmake/orbvi_sdk/orbvi_sdkTargets.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/cmake/orbvi_sdk/orbvi_sdkTargets-noconfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/cmake/orbvi_sdk/orbvi_sdkConfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/cmake/orbvi_sdk/orbvi_sdkConfigVersion.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/pkgconfig/orbvi_sdk.pc
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_bridge_node
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_bridge_node" to "$ORIGIN/.."
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_image_stream_node
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_image_stream_node" to "$ORIGIN/.."
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_temperature_node
+-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_temperature_node" to "$ORIGIN/.."
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/sync_capture.launch.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/imu_bridge.launch.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/fake_bridge.launch.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/image_jpeg.launch.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/__pycache__
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/__pycache__/image_nv12.launch.cpython-310.pyc
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/__pycache__/image_jpeg.launch.cpython-310.pyc
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/temperature.launch.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/image_nv12.launch.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/rtsp_bridge.launch.py
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/image_nv12.yaml
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/sync_capture.rviz
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/fake_bridge.yaml
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/temperature.yaml
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/rtsp_bridge.yaml
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/image_jpeg.yaml
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/ament_index/resource_index/package_run_dependencies/orbvi_4p_bridge
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/ament_index/resource_index/parent_prefix_path/orbvi_4p_bridge
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/ament_prefix_path.sh
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/ament_prefix_path.dsv
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/path.sh
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/path.dsv
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/local_setup.bash
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/local_setup.sh
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/local_setup.zsh
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/local_setup.dsv
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/package.dsv
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/ament_index/resource_index/packages/orbvi_4p_bridge
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_generator_cExport.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_generator_cExport-noconfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_generator_cppExport.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_cExport.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_cExport-noconfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_cppExport.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_cppExport-noconfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_generator_pyExport.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_generator_pyExport-noconfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/rosidl_cmake-extras.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/rosidl_cmake_aggregate_target-extras.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridgeConfig.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridgeConfig-version.cmake
+-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/package.xml

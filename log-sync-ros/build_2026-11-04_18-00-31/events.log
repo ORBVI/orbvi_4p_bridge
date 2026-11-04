@@ -1,0 +1,399 @@
+[0.000000] (-) TimerEvent: {}
+[0.000139] (orbvi_4p_bridge) JobQueued: {'identifier': 'orbvi_4p_bridge', 'dependencies': OrderedDict()}
+[0.000171] (orbvi_4p_bridge) JobStarted: {'identifier': 'orbvi_4p_bridge'}
+[0.004745] (orbvi_4p_bridge) JobProgress: {'identifier': 'orbvi_4p_bridge', 'progress': 'cmake'}
+[0.005438] (orbvi_4p_bridge) JobProgress: {'identifier': 'orbvi_4p_bridge', 'progress': 'build'}
+[0.005969] (orbvi_4p_bridge) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/build-sync-ros/orbvi_4p_bridge', '--', '-j16', '-l16'], 'cwd': '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/build-sync-ros/orbvi_4p_bridge', 'env': OrderedDict([('CODEX_CI', '1'), ('CODEX_HOME', '/home/k8plus/.codex'), ('CODEX_REMOTE_PAYLOAD', 'printf \'%b\' \'\\237\\246\\364\\263\\141\\322\\001\\114\'; PATH="${CODEX_INSTALL_DIR:-$HOME/.local/bin}:$PATH"; export PATH; if [ "${CODEX_SSH_SKIP_APP_SERVER_BOOT:-}" = "true" ]; then exit 0; fi; (umask 077; mkdir -p -- "${CODEX_HOME:-$HOME/.codex}/app-server-control" && (pkill -9 -U "$(id -u)" -f \'codex.*[d]esktop-ssh-websocket-v0.sock\' || true) && if [ -S "${SSH_AUTH_SOCK:-}" ]; then ln -sfn -- "$SSH_AUTH_SOCK" "${CODEX_HOME:-$HOME/.codex}/app-server-control/forwarded-ssh-agent.sock"; elif [ ! -S "${CODEX_HOME:-$HOME/.codex}/app-server-control/forwarded-ssh-agent.sock" ]; then rm -f -- "${CODEX_HOME:-$HOME/.codex}/app-server-control/forwarded-ssh-agent.sock"; fi && : >"${CODEX_HOME:-$HOME/.codex}/app-server-control/app-server.log") && { SSH_AUTH_SOCK="${CODEX_HOME:-$HOME/.codex}/app-server-control/forwarded-ssh-agent.sock" nohup codex -c features.code_mode_host=true app-server --listen unix:// </dev/null >"${CODEX_HOME:-$HOME/.codex}/app-server-control/app-server.log" 2>&1 & }'), ('LC_TIME', 'zh_CN.UTF-8'), ('SSH_CLIENT', '192.168.8.21 10245 22'), ('USER', 'k8plus'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/k8plus'), ('LESS', '-R'), ('MOTD_SHOWN', 'pam'), ('OLDPWD', '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('ZSH', '/home/k8plus/.oh-my-zsh'), ('PAGER', 'cat'), ('ROS_PYTHON_VERSION', '3'), ('LC_CTYPE', 'C.UTF-8'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('NO_COLOR', '1'), ('COLORTERM', ''), ('NVM_DIR', '/home/k8plus/.nvm'), ('CODEX_PERMISSION_PROFILE', ':danger-full-access'), ('CODEX_TOOL_CALL_ID', 'call_JSVNhOQru9nraBiH8WVIWvED'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'k8plus'), ('_', '/home/k8plus/.local/bin/colcon'), ('CODEX_APPLY_PATCH_PRESERVE_LINE_ENDINGS', '1'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '4811'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/k8plus/.npm-global/bin:/home/k8plus/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/home/k8plus/.codex/tmp/arg0-linux/codex-arg04BkA4A:/home/k8plus/.local/bin:/home/k8plus/.npm-global/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/k8plus/.local/opt/waysee-app-venv/bin:/home/k8plus/.local/bin:/home/k8plus/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('CODEX_SESSION_ID', '01a1a5b0-805b-7eb2-ab07-326cd7a90497'), ('CODEX_VERSION', '0.163.0'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('SSH_AUTH_SOCK', '/home/k8plus/.codex/app-server-control/forwarded-ssh-agent.sock'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('LC_NAME', 'zh_CN.UTF-8'), ('SHELL', '/usr/bin/zsh'), ('CODEX_THREAD_ID', '01a1a5b0-805b-7eb2-ab07-326cd7a90497'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('LC_ALL', 'C.UTF-8'), ('PWD', '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/build-sync-ros/orbvi_4p_bridge'), ('CODEX_MANAGED_PACKAGE_ROOT', '/home/k8plus/.npm-global/lib/node_modules/@openai/codex'), ('NVM_CD_FLAGS', '-q'), ('SSH_CONNECTION', '192.168.8.21 10245 192.168.8.90 22'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CODEX_MANAGED_BY_NPM', '1'), ('NVM_RC_VERSION', ''), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.025315] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.095819] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found builtin_interfaces: 1.2.3 (/opt/ros/humble/share/builtin_interfaces/cmake)\n'}
+[0.099544] (-) TimerEvent: {}
+[0.109394] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.110600] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.113702] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.118379] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.124532] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.130045] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found rclcpp: 16.0.21 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.142689] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.143362] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.199631] (-) TimerEvent: {}
+[0.214010] (orbvi_4p_bridge) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.240974] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.255959] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.299700] (-) TimerEvent: {}
+[0.399814] (-) TimerEvent: {}
+[0.413557] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.1 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.499879] (-) TimerEvent: {}
+[0.600080] (-) TimerEvent: {}
+[0.625219] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.700179] (-) TimerEvent: {}
+[0.714102] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.728506] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.743005] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.743156] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.743235] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[0.800302] (-) TimerEvent: {}
+[0.807660] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Found launch_testing_ament_cmake: 1.0.15 (/opt/ros/humble/share/launch_testing_ament_cmake/cmake)\n'}
+[0.822973] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.823131] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.823213] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[0.866644] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.900422] (-) TimerEvent: {}
+[0.902822] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Generating done\n'}
+[0.915096] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Build files have been written to: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/build-sync-ros/orbvi_4p_bridge\n'}
+[0.939345] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_generator_c\n'}
+[0.939515] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target test_capture_helpers\n'}
+[0.943896] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_sdk_shared\n'}
+[0.945337] (orbvi_4p_bridge) StdoutLine: {'line': b'[  1%] Built target orbvi_4p_bridge__rs\n'}
+[0.945475] (orbvi_4p_bridge) StdoutLine: {'line': b'[  3%] Built target orbvi_4p_bridge__cpp\n'}
+[0.945556] (orbvi_4p_bridge) StdoutLine: {'line': b'[  9%] Built target orbvi_4p_bridge__rosidl_generator_c\n'}
+[0.946169] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 12%] Built target test_capture_helpers\n'}
+[0.952706] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 14%] Built target ament_cmake_python_copy_orbvi_4p_bridge\n'}
+[0.952853] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 30%] Built target orbvi_sdk_shared\n'}
+[0.953190] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_typesupport_c\n'}
+[0.953504] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_typesupport_introspection_c\n'}
+[0.953879] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_typesupport_cpp\n'}
+[0.954195] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_typesupport_introspection_cpp\n'}
+[0.954281] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_typesupport_fastrtps_c\n'}
+[0.954356] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_typesupport_fastrtps_cpp\n'}
+[0.960847] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 36%] Built target orbvi_4p_bridge__rosidl_typesupport_c\n'}
+[0.961645] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target test_frame_image\n'}
+[0.961758] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 42%] Built target orbvi_4p_bridge__rosidl_typesupport_introspection_c\n'}
+[0.961832] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 49%] Built target orbvi_4p_bridge__rosidl_typesupport_introspection_cpp\n'}
+[0.962613] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 55%] Built target orbvi_4p_bridge__rosidl_typesupport_fastrtps_c\n'}
+[0.963186] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 61%] Built target orbvi_4p_bridge__rosidl_typesupport_fastrtps_cpp\n'}
+[0.963347] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 68%] Built target orbvi_4p_bridge__rosidl_typesupport_cpp\n'}
+[0.963437] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_image_stream_node\n'}
+[0.964085] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_temperature_node\n'}
+[0.970129] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 71%] Built target test_frame_image\n'}
+[0.972783] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_capture_check\n'}
+[0.972937] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_bridge_node\n'}
+[0.973705] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 77%] Built target orbvi_image_stream_node\n'}
+[0.973739] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 77%] Built target orbvi_temperature_node\n'}
+[0.977228] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 77%] Built target orbvi_4p_bridge\n'}
+[0.982684] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 80%] Building CXX object CMakeFiles/orbvi_capture_check.dir/tools/capture_check.cpp.o\n'}
+[0.982855] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 80%] Building CXX object CMakeFiles/orbvi_bridge_node.dir/src/bridge_node.cpp.o\n'}
+[0.991336] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 82%] Built target orbvi_4p_bridge__py\n'}
+[1.000525] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_generator_py\n'}
+[1.000670] (-) TimerEvent: {}
+[1.011408] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 87%] Built target orbvi_4p_bridge__rosidl_generator_py\n'}
+[1.019853] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_typesupport_c__pyext\n'}
+[1.019975] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_typesupport_fastrtps_c__pyext\n'}
+[1.020015] (orbvi_4p_bridge) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target orbvi_4p_bridge__rosidl_typesupport_introspection_c__pyext\n'}
+[1.028201] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 96%] Built target orbvi_4p_bridge__rosidl_typesupport_c__pyext\n'}
+[1.028364] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 96%] Built target orbvi_4p_bridge__rosidl_typesupport_introspection_c__pyext\n'}
+[1.028432] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 96%] Built target orbvi_4p_bridge__rosidl_typesupport_fastrtps_c__pyext\n'}
+[1.077341] (orbvi_4p_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[1.077682] (orbvi_4p_bridge) StdoutLine: {'line': b'writing orbvi_4p_bridge.egg-info/PKG-INFO\n'}
+[1.077774] (orbvi_4p_bridge) StdoutLine: {'line': b'writing dependency_links to orbvi_4p_bridge.egg-info/dependency_links.txt\n'}
+[1.077955] (orbvi_4p_bridge) StdoutLine: {'line': b'writing top-level names to orbvi_4p_bridge.egg-info/top_level.txt\n'}
+[1.078760] (orbvi_4p_bridge) StdoutLine: {'line': b"reading manifest file 'orbvi_4p_bridge.egg-info/SOURCES.txt'\n"}
+[1.079075] (orbvi_4p_bridge) StdoutLine: {'line': b"writing manifest file 'orbvi_4p_bridge.egg-info/SOURCES.txt'\n"}
+[1.100641] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 96%] Built target ament_cmake_python_build_orbvi_4p_bridge_egg\n'}
+[1.100756] (-) TimerEvent: {}
+[1.200909] (-) TimerEvent: {}
+[1.301120] (-) TimerEvent: {}
+[1.401367] (-) TimerEvent: {}
+[1.501633] (-) TimerEvent: {}
+[1.601887] (-) TimerEvent: {}
+[1.702135] (-) TimerEvent: {}
+[1.802349] (-) TimerEvent: {}
+[1.902603] (-) TimerEvent: {}
+[2.002838] (-) TimerEvent: {}
+[2.103074] (-) TimerEvent: {}
+[2.203290] (-) TimerEvent: {}
+[2.303472] (-) TimerEvent: {}
+[2.403682] (-) TimerEvent: {}
+[2.503906] (-) TimerEvent: {}
+[2.604115] (-) TimerEvent: {}
+[2.704322] (-) TimerEvent: {}
+[2.804534] (-) TimerEvent: {}
+[2.904714] (-) TimerEvent: {}
+[3.004920] (-) TimerEvent: {}
+[3.105134] (-) TimerEvent: {}
+[3.205345] (-) TimerEvent: {}
+[3.305519] (-) TimerEvent: {}
+[3.405722] (-) TimerEvent: {}
+[3.505931] (-) TimerEvent: {}
+[3.606112] (-) TimerEvent: {}
+[3.706286] (-) TimerEvent: {}
+[3.806462] (-) TimerEvent: {}
+[3.906621] (-) TimerEvent: {}
+[4.006784] (-) TimerEvent: {}
+[4.106964] (-) TimerEvent: {}
+[4.207136] (-) TimerEvent: {}
+[4.307295] (-) TimerEvent: {}
+[4.407438] (-) TimerEvent: {}
+[4.454540] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 98%] Linking CXX executable orbvi_bridge_node\n'}
+[4.507572] (-) TimerEvent: {}
+[4.607760] (-) TimerEvent: {}
+[4.673570] (orbvi_4p_bridge) StdoutLine: {'line': b'[ 98%] Built target orbvi_bridge_node\n'}
+[4.707849] (-) TimerEvent: {}
+[4.808101] (-) TimerEvent: {}
+[4.908308] (-) TimerEvent: {}
+[5.008514] (-) TimerEvent: {}
+[5.108694] (-) TimerEvent: {}
+[5.208878] (-) TimerEvent: {}
+[5.309086] (-) TimerEvent: {}
+[5.409305] (-) TimerEvent: {}
+[5.509515] (-) TimerEvent: {}
+[5.609728] (-) TimerEvent: {}
+[5.709939] (-) TimerEvent: {}
+[5.810153] (-) TimerEvent: {}
+[5.910369] (-) TimerEvent: {}
+[6.010579] (-) TimerEvent: {}
+[6.110793] (-) TimerEvent: {}
+[6.211020] (-) TimerEvent: {}
+[6.311239] (-) TimerEvent: {}
+[6.411442] (-) TimerEvent: {}
+[6.511642] (-) TimerEvent: {}
+[6.611904] (-) TimerEvent: {}
+[6.712086] (-) TimerEvent: {}
+[6.812305] (-) TimerEvent: {}
+[6.912526] (-) TimerEvent: {}
+[7.012712] (-) TimerEvent: {}
+[7.112921] (-) TimerEvent: {}
+[7.213122] (-) TimerEvent: {}
+[7.313387] (-) TimerEvent: {}
+[7.413614] (-) TimerEvent: {}
+[7.513812] (-) TimerEvent: {}
+[7.614026] (-) TimerEvent: {}
+[7.714229] (-) TimerEvent: {}
+[7.814459] (-) TimerEvent: {}
+[7.914688] (-) TimerEvent: {}
+[8.014898] (-) TimerEvent: {}
+[8.115102] (-) TimerEvent: {}
+[8.215300] (-) TimerEvent: {}
+[8.315504] (-) TimerEvent: {}
+[8.415707] (-) TimerEvent: {}
+[8.515910] (-) TimerEvent: {}
+[8.616144] (-) TimerEvent: {}
+[8.716335] (-) TimerEvent: {}
+[8.816496] (-) TimerEvent: {}
+[8.916700] (-) TimerEvent: {}
+[9.016955] (-) TimerEvent: {}
+[9.117192] (-) TimerEvent: {}
+[9.217457] (-) TimerEvent: {}
+[9.317665] (-) TimerEvent: {}
+[9.417849] (-) TimerEvent: {}
+[9.518053] (-) TimerEvent: {}
+[9.618252] (-) TimerEvent: {}
+[9.718420] (-) TimerEvent: {}
+[9.818588] (-) TimerEvent: {}
+[9.918950] (-) TimerEvent: {}
+[10.019228] (-) TimerEvent: {}
+[10.119415] (-) TimerEvent: {}
+[10.219591] (-) TimerEvent: {}
+[10.249464] (orbvi_4p_bridge) StdoutLine: {'line': b'[100%] Linking CXX executable orbvi_capture_check\n'}
+[10.319688] (-) TimerEvent: {}
+[10.419941] (-) TimerEvent: {}
+[10.520214] (-) TimerEvent: {}
+[10.620459] (-) TimerEvent: {}
+[10.641492] (orbvi_4p_bridge) StdoutLine: {'line': b'[100%] Built target orbvi_capture_check\n'}
+[10.650657] (orbvi_4p_bridge) CommandEnded: {'returncode': 0}
+[10.651710] (orbvi_4p_bridge) JobProgress: {'identifier': 'orbvi_4p_bridge', 'progress': 'install'}
+[10.659536] (orbvi_4p_bridge) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/build-sync-ros/orbvi_4p_bridge'], 'cwd': '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/build-sync-ros/orbvi_4p_bridge', 'env': OrderedDict([('CODEX_CI', '1'), ('CODEX_HOME', '/home/k8plus/.codex'), ('CODEX_REMOTE_PAYLOAD', 'printf \'%b\' \'\\237\\246\\364\\263\\141\\322\\001\\114\'; PATH="${CODEX_INSTALL_DIR:-$HOME/.local/bin}:$PATH"; export PATH; if [ "${CODEX_SSH_SKIP_APP_SERVER_BOOT:-}" = "true" ]; then exit 0; fi; (umask 077; mkdir -p -- "${CODEX_HOME:-$HOME/.codex}/app-server-control" && (pkill -9 -U "$(id -u)" -f \'codex.*[d]esktop-ssh-websocket-v0.sock\' || true) && if [ -S "${SSH_AUTH_SOCK:-}" ]; then ln -sfn -- "$SSH_AUTH_SOCK" "${CODEX_HOME:-$HOME/.codex}/app-server-control/forwarded-ssh-agent.sock"; elif [ ! -S "${CODEX_HOME:-$HOME/.codex}/app-server-control/forwarded-ssh-agent.sock" ]; then rm -f -- "${CODEX_HOME:-$HOME/.codex}/app-server-control/forwarded-ssh-agent.sock"; fi && : >"${CODEX_HOME:-$HOME/.codex}/app-server-control/app-server.log") && { SSH_AUTH_SOCK="${CODEX_HOME:-$HOME/.codex}/app-server-control/forwarded-ssh-agent.sock" nohup codex -c features.code_mode_host=true app-server --listen unix:// </dev/null >"${CODEX_HOME:-$HOME/.codex}/app-server-control/app-server.log" 2>&1 & }'), ('LC_TIME', 'zh_CN.UTF-8'), ('SSH_CLIENT', '192.168.8.21 10245 22'), ('USER', 'k8plus'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/k8plus'), ('LESS', '-R'), ('MOTD_SHOWN', 'pam'), ('OLDPWD', '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('ZSH', '/home/k8plus/.oh-my-zsh'), ('PAGER', 'cat'), ('ROS_PYTHON_VERSION', '3'), ('LC_CTYPE', 'C.UTF-8'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('NO_COLOR', '1'), ('COLORTERM', ''), ('NVM_DIR', '/home/k8plus/.nvm'), ('CODEX_PERMISSION_PROFILE', ':danger-full-access'), ('CODEX_TOOL_CALL_ID', 'call_JSVNhOQru9nraBiH8WVIWvED'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'k8plus'), ('_', '/home/k8plus/.local/bin/colcon'), ('CODEX_APPLY_PATCH_PRESERVE_LINE_ENDINGS', '1'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '4811'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/k8plus/.npm-global/bin:/home/k8plus/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/home/k8plus/.codex/tmp/arg0-linux/codex-arg04BkA4A:/home/k8plus/.local/bin:/home/k8plus/.npm-global/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/k8plus/.local/opt/waysee-app-venv/bin:/home/k8plus/.local/bin:/home/k8plus/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('CODEX_SESSION_ID', '01a1a5b0-805b-7eb2-ab07-326cd7a90497'), ('CODEX_VERSION', '0.163.0'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('SSH_AUTH_SOCK', '/home/k8plus/.codex/app-server-control/forwarded-ssh-agent.sock'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('LC_NAME', 'zh_CN.UTF-8'), ('SHELL', '/usr/bin/zsh'), ('CODEX_THREAD_ID', '01a1a5b0-805b-7eb2-ab07-326cd7a90497'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('LC_ALL', 'C.UTF-8'), ('PWD', '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/build-sync-ros/orbvi_4p_bridge'), ('CODEX_MANAGED_PACKAGE_ROOT', '/home/k8plus/.npm-global/lib/node_modules/@openai/codex'), ('NVM_CD_FLAGS', '-q'), ('SSH_CONNECTION', '192.168.8.21 10245 192.168.8.90 22'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CODEX_MANAGED_BY_NPM', '1'), ('NVM_RC_VERSION', ''), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[10.665991] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.666043] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/ament_index/resource_index/rosidl_interfaces/orbvi_4p_bridge\n'}
+[10.666069] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge\n'}
+[10.666092] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg\n'}
+[10.666113] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/rosidl_generator_c__visibility_control.h\n'}
+[10.666134] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail\n'}
+[10.666155] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__struct.h\n'}
+[10.666175] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__functions.c\n'}
+[10.666239] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.h\n'}
+[10.666260] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__functions.c\n'}
+[10.666417] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__struct.h\n'}
+[10.666438] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__functions.h\n'}
+[10.666459] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.h\n'}
+[10.666519] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__functions.h\n'}
+[10.666540] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/frame_metadata.h\n'}
+[10.666560] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/imu_metadata.h\n'}
+[10.666582] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/library_path.sh\n'}
+[10.666603] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/library_path.dsv\n'}
+[10.666630] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_generator_c.so\n'}
+[10.666848] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge\n'}
+[10.666918] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg\n'}
+[10.666942] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail\n'}
+[10.666965] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__rosidl_typesupport_fastrtps_c.h\n'}
+[10.666988] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__rosidl_typesupport_fastrtps_c.h\n'}
+[10.667010] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[10.667032] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_fastrtps_c.so\n'}
+[10.667054] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge\n'}
+[10.667076] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg\n'}
+[10.667098] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/frame_metadata.hpp\n'}
+[10.667121] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail\n'}
+[10.667143] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__traits.hpp\n'}
+[10.667165] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.hpp\n'}
+[10.667243] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__builder.hpp\n'}
+[10.667308] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.hpp\n'}
+[10.667329] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__struct.hpp\n'}
+[10.667349] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__builder.hpp\n'}
+[10.667388] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__struct.hpp\n'}
+[10.667409] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__traits.hpp\n'}
+[10.667428] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[10.667448] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/imu_metadata.hpp\n'}
+[10.667468] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge\n'}
+[10.667488] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg\n'}
+[10.667508] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail\n'}
+[10.667530] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/dds_fastrtps\n'}
+[10.667576] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.667600] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.667622] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[10.667644] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_fastrtps_cpp.so\n'}
+[10.667667] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge\n'}
+[10.667689] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg\n'}
+[10.667711] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[10.667764] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail\n'}
+[10.667784] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__rosidl_typesupport_introspection_c.h\n'}
+[10.667825] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.c\n'}
+[10.667848] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.c\n'}
+[10.667869] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__rosidl_typesupport_introspection_c.h\n'}
+[10.667893] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_introspection_c.so\n'}
+[10.667916] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_c.so\n'}
+[10.667936] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge\n'}
+[10.667956] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg\n'}
+[10.667979] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail\n'}
+[10.668001] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__type_support.cpp\n'}
+[10.668023] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/frame_metadata__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.668046] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.668068] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_4p_bridge/orbvi_4p_bridge/msg/detail/imu_metadata__type_support.cpp\n'}
+[10.668090] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_introspection_cpp.so\n'}
+[10.668140] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_typesupport_cpp.so\n'}
+[10.668161] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/pythonpath.sh\n'}
+[10.668201] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/pythonpath.dsv\n'}
+[10.668222] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge-0.1.0-py3.10.egg-info\n'}
+[10.668268] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge-0.1.0-py3.10.egg-info/dependency_links.txt\n'}
+[10.668332] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge-0.1.0-py3.10.egg-info/PKG-INFO\n'}
+[10.668420] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge-0.1.0-py3.10.egg-info/SOURCES.txt\n'}
+[10.668507] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge-0.1.0-py3.10.egg-info/top_level.txt\n'}
+[10.668622] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge\n'}
+[10.668682] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg\n'}
+[10.668707] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/_imu_metadata.py\n'}
+[10.668794] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/_frame_metadata.py\n'}
+[10.668818] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/_frame_metadata_s.c\n'}
+[10.668841] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/__init__.py\n'}
+[10.668924] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg/_imu_metadata_s.c\n'}
+[10.669074] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/_orbvi_4p_bridge_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[10.669144] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[10.669206] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/_orbvi_4p_bridge_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[10.669258] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[10.669307] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/__init__.py\n'}
+[10.669354] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[10.669410] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/liborbvi_4p_bridge__rosidl_generator_py.so\n'}
+[10.669455] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/_orbvi_4p_bridge_s.ep.rosidl_typesupport_c.c\n'}
+[10.687411] (orbvi_4p_bridge) StdoutLine: {'line': b"Listing '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge'...\n"}
+[10.687549] (orbvi_4p_bridge) StdoutLine: {'line': b"Compiling '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/__init__.py'...\n"}
+[10.687623] (orbvi_4p_bridge) StdoutLine: {'line': b"Listing '/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/msg'...\n"}
+[10.690310] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[10.690707] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[10.690958] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/local/lib/python3.10/dist-packages/orbvi_4p_bridge/orbvi_4p_bridge_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[10.691112] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_4p_bridge__rosidl_generator_py.so\n'}
+[10.691245] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust\n'}
+[10.691414] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/src\n'}
+[10.691485] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/src/msg.rs\n'}
+[10.691547] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/src/msg\n'}
+[10.691607] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/src/msg/rmw.rs\n'}
+[10.691665] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/src/lib.rs\n'}
+[10.691722] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/build.rs\n'}
+[10.691778] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/rust/Cargo.toml\n'}
+[10.691909] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/msg/FrameMetadata.idl\n'}
+[10.692030] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/msg/ImuMetadata.idl\n'}
+[10.692054] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/msg/FrameMetadata.msg\n'}
+[10.692131] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/msg/ImuMetadata.msg\n'}
+[10.692155] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_sdk.so.0.1.0\n'}
+[10.692179] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_sdk.so.0\n'}
+[10.692201] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/liborbvi_sdk.so\n'}
+[10.692223] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include\n'}
+[10.692245] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk\n'}
+[10.692267] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/device.hpp\n'}
+[10.692289] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/contract.hpp\n'}
+[10.692311] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/replay.hpp\n'}
+[10.692332] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/compressed_frame.hpp\n'}
+[10.692354] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/rtsp.hpp\n'}
+[10.692376] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/imu.hpp\n'}
+[10.692398] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/diagnostics.hpp\n'}
+[10.692420] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/client.hpp\n'}
+[10.692442] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/image_stream.hpp\n'}
+[10.692465] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/udp_imu.hpp\n'}
+[10.692486] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/sync.hpp\n'}
+[10.692508] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/subscription.hpp\n'}
+[10.692567] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/transport.hpp\n'}
+[10.692587] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/frame.hpp\n'}
+[10.692607] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/status.hpp\n'}
+[10.692627] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/runtime.hpp\n'}
+[10.692646] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/fake.hpp\n'}
+[10.692668] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/temperature_stream.hpp\n'}
+[10.692689] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/export.hpp\n'}
+[10.692708] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/options.hpp\n'}
+[10.692728] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/include/orbvi_sdk/version.hpp\n'}
+[10.692748] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/cmake/orbvi_sdk/orbvi_sdkTargets.cmake\n'}
+[10.692770] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/cmake/orbvi_sdk/orbvi_sdkTargets-noconfig.cmake\n'}
+[10.692791] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/cmake/orbvi_sdk/orbvi_sdkConfig.cmake\n'}
+[10.692811] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/cmake/orbvi_sdk/orbvi_sdkConfigVersion.cmake\n'}
+[10.692831] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/pkgconfig/orbvi_sdk.pc\n'}
+[10.692856] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_bridge_node\n'}
+[10.693972] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_bridge_node" to "$ORIGIN/.."\n'}
+[10.694172] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_capture_check\n'}
+[10.701840] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Set runtime path of "/home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_capture_check" to ""\n'}
+[10.701945] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_image_stream_node\n'}
+[10.702029] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/lib/orbvi_4p_bridge/orbvi_temperature_node\n'}
+[10.702137] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch\n'}
+[10.702164] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/sync_capture.launch.py\n'}
+[10.702390] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/imu_bridge.launch.py\n'}
+[10.702415] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/fake_bridge.launch.py\n'}
+[10.702438] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/image_jpeg.launch.py\n'}
+[10.702540] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/__pycache__\n'}
+[10.702561] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/__pycache__/image_nv12.launch.cpython-310.pyc\n'}
+[10.702736] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/__pycache__/image_jpeg.launch.cpython-310.pyc\n'}
+[10.702758] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/temperature.launch.py\n'}
+[10.702781] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/image_nv12.launch.py\n'}
+[10.702806] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/launch/rtsp_bridge.launch.py\n'}
+[10.702828] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config\n'}
+[10.702865] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/image_nv12.yaml\n'}
+[10.702892] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/fake_bridge.yaml\n'}
+[10.702915] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/temperature.yaml\n'}
+[10.702939] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/rtsp_bridge.yaml\n'}
+[10.702961] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/config/image_jpeg.yaml\n'}
+[10.702983] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/ament_index/resource_index/package_run_dependencies/orbvi_4p_bridge\n'}
+[10.703044] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/ament_index/resource_index/parent_prefix_path/orbvi_4p_bridge\n'}
+[10.703066] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/ament_prefix_path.sh\n'}
+[10.703087] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/ament_prefix_path.dsv\n'}
+[10.703108] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/path.sh\n'}
+[10.703151] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/environment/path.dsv\n'}
+[10.703172] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/local_setup.bash\n'}
+[10.703192] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/local_setup.sh\n'}
+[10.703212] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/local_setup.zsh\n'}
+[10.703233] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/local_setup.dsv\n'}
+[10.703255] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Installing: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/package.dsv\n'}
+[10.703300] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/ament_index/resource_index/packages/orbvi_4p_bridge\n'}
+[10.703349] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_generator_cExport.cmake\n'}
+[10.703372] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_generator_cExport-noconfig.cmake\n'}
+[10.703419] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[10.703440] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[10.703484] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_generator_cppExport.cmake\n'}
+[10.703539] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[10.703560] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[10.703613] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_introspection_cExport.cmake\n'}
+[10.703634] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[10.703686] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_cExport.cmake\n'}
+[10.703729] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[10.703783] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[10.703831] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[10.703877] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_cppExport.cmake\n'}
+[10.703943] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridge__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[10.703995] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_generator_pyExport.cmake\n'}
+[10.704072] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/export_orbvi_4p_bridge__rosidl_generator_pyExport-noconfig.cmake\n'}
+[10.704095] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/rosidl_cmake-extras.cmake\n'}
+[10.704141] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[10.704352] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[10.704374] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[10.704394] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[10.704414] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[10.704434] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[10.704454] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/rosidl_cmake_aggregate_target-extras.cmake\n'}
+[10.704474] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridgeConfig.cmake\n'}
+[10.704493] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/cmake/orbvi_4p_bridgeConfig-version.cmake\n'}
+[10.704513] (orbvi_4p_bridge) StdoutLine: {'line': b'-- Up-to-date: /home/k8plus/src/orbvi-4p/orbvi_4p_bridge/install-sync-ros/orbvi_4p_bridge/share/orbvi_4p_bridge/package.xml\n'}
+[10.705854] (orbvi_4p_bridge) CommandEnded: {'returncode': 0}
+[10.717140] (orbvi_4p_bridge) JobEnded: {'identifier': 'orbvi_4p_bridge', 'rc': 0}
+[10.717658] (-) EventReactorShutdown: {}
