@@ -11,7 +11,7 @@
 
 ## 使用文档
 
-编译、启动及 Topic 订阅验证，请按 [ORBVI 4P 使用指南](https://huanshizhineng.feishu.cn/wiki/GoeUwlTiRiaY5skses2crmPFnCg?fromScene=spaceOverview) 中的 ROS 2 章节操作。
+编译、启动及 Topic 订阅验证，请按 [ORBVI 4P 使用指南](https://huanshizhineng.feishu.cn/wiki/RxH8wzbVgioHgXk5GqEcy67Uned) 中的 ROS 2 章节操作。
 
 RTSP 启动命令增加 `image_format:=bgr8` 可发布彩色 `sensor_msgs/Image`；
 省略参数时保持原有 `mono8`。彩色模式要求源 RTSP 视频含颜色信息，
