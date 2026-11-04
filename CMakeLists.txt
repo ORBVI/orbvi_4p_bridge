@@ -93,6 +93,12 @@ if(BUILD_TESTING)
   add_launch_test(test/test_fake_bridge_launch.py TIMEOUT 30)
   add_launch_test(test/test_imu_bridge_launch.py TIMEOUT 30)
 
+  add_executable(test_frame_image test/test_frame_image.cpp)
+  target_include_directories(test_frame_image PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+  target_link_libraries(test_frame_image ${ORBVI_SDK_TARGET})
+  ament_target_dependencies(test_frame_image sensor_msgs)
+  add_test(NAME frame_image COMMAND test_frame_image)
+
   add_test(NAME image_fail_closed_runtime
     COMMAND $<TARGET_FILE:orbvi_image_stream_node> --ros-args
       -p runtime_mode:=unsupported)
@@ -163,7 +169,12 @@ if(BUILD_TESTING)
       -p runtime_mode:=rtsp -p camera_count:=1
       -p rtsp_url:=rtsp://127.0.0.1:554/live/PRR
       -p rtsp_url_1:=rtsp://127.0.0.1:555/live/PRR)
-  set_tests_properties(rtsp_four_requires_all_urls rtsp_rejects_extra_url PROPERTIES
+  add_test(NAME rtsp_rejects_invalid_image_format
+    COMMAND $<TARGET_FILE:orbvi_bridge_node> --ros-args
+      -p runtime_mode:=rtsp -p camera_count:=1
+      -p rtsp_url:=rtsp://127.0.0.1:554/live/PRR -p image_format:=rgb8)
+  set_tests_properties(rtsp_four_requires_all_urls rtsp_rejects_extra_url
+    rtsp_rejects_invalid_image_format PROPERTIES
     WILL_FAIL TRUE TIMEOUT 10)
 
   add_test(NAME imu_requires_opt_in

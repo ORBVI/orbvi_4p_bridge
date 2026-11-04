@@ -17,6 +17,7 @@
 #include "orbvi_sdk/fake.hpp"
 #include "orbvi_sdk/rtsp.hpp"
 #include "orbvi_sdk/udp_imu.hpp"
+#include "frame_image.hpp"
 
 namespace {
 
@@ -29,6 +30,7 @@ class BridgeNode final : public rclcpp::Node {
     rtsp_urls_[0] = declare_parameter<std::string>("rtsp_url", "");
     for (std::size_t i = 1; i < kCameraCount; ++i)
       rtsp_urls_[i] = declare_parameter<std::string>("rtsp_url_" + std::to_string(i), "");
+    image_format_ = declare_parameter<std::string>("image_format", "mono8");
     imu_enabled_ = declare_parameter<bool>("imu_enabled", false);
     imu_bind_address_ = declare_parameter<std::string>("imu_bind_address", "0.0.0.0");
     imu_source_address_ = declare_parameter<std::string>("imu_source_address", "");
@@ -55,6 +57,11 @@ class BridgeNode final : public rclcpp::Node {
     if (runtime_mode_ != "fake" && runtime_mode_ != "rtsp" &&
         runtime_mode_ != "udp_imu") {
       error = "runtime_mode must be explicitly fake, rtsp or udp_imu";
+      return false;
+    }
+    if (image_format_ != "mono8" &&
+        !(runtime_mode_ == "rtsp" && image_format_ == "bgr8")) {
+      error = "image_format must be mono8, or bgr8 for rtsp mode";
       return false;
     }
     if (runtime_mode_ == "rtsp") {
@@ -183,7 +190,10 @@ class BridgeNode final : public rclcpp::Node {
       } else {
         orbvi_sdk::RtspConfig config;
         config.urls = rtsp_urls_;
-        client_ = orbvi_sdk::make_rtsp_client(config);
+        const auto format = image_format_ == "bgr8"
+                                ? orbvi_sdk::PixelFormat::bgr8
+                                : orbvi_sdk::PixelFormat::gray8;
+        client_ = orbvi_sdk::make_rtsp_client(config, format);
       }
 
       orbvi_sdk::CallbackSet callbacks;
@@ -230,8 +240,9 @@ class BridgeNode final : public rclcpp::Node {
                   topic_namespace_.c_str());
     } else if (runtime_mode_ == "rtsp") {
       // Do not log RTSP URLs: they may contain credentials.
-      RCLCPP_INFO(get_logger(), "runtime_mode=rtsp: publishing real camera_0..camera_%lld on %s/camera_<index>/image",
-                  static_cast<long long>(camera_count_ - 1), topic_namespace_.c_str());
+      RCLCPP_INFO(get_logger(), "runtime_mode=rtsp: publishing %s camera_0..camera_%lld on %s/camera_<index>/image",
+                  image_format_.c_str(), static_cast<long long>(camera_count_ - 1),
+                  topic_namespace_.c_str());
     }
     if (imu_enabled_) {
       RCLCPP_INFO(get_logger(), "UDP IMU -> %s/imu", topic_namespace_.c_str());
@@ -332,62 +343,30 @@ class BridgeNode final : public rclcpp::Node {
                            view.camera_index);
       return;
     }
-    if (view.pixel_format != orbvi_sdk::PixelFormat::gray8 ||
-        view.layout != orbvi_sdk::FrameLayout::single_plane) {
-      RCLCPP_WARN_THROTTLE(
-          get_logger(), *get_clock(), 1000,
-          "dropping unsupported camera_%u format/layout: %s/%s",
-          view.camera_index, orbvi_sdk::to_string(view.pixel_format),
-          orbvi_sdk::to_string(view.layout));
-      return;
-    }
     if (!view.crc_valid) {
       RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 1000,
                            "dropping camera_%u frame with crc_valid=false",
                            view.camera_index);
       return;
     }
-    if (view.stride != view.width) {
-      RCLCPP_WARN_THROTTLE(
-          get_logger(), *get_clock(), 1000,
-          "dropping camera_%u frame with stride=%u width=%u; only packed mono8 "
-          "frames are supported by this bridge",
-          view.camera_index, view.stride, view.width);
-      return;
-    }
-
-    const std::size_t width = static_cast<std::size_t>(view.width);
-    const std::size_t height = static_cast<std::size_t>(view.height);
-    if (height != 0U && width > std::numeric_limits<std::size_t>::max() / height) {
-      RCLCPP_ERROR_THROTTLE(get_logger(), *get_clock(), 1000,
-                            "dropping oversized camera_%u frame", view.camera_index);
-      return;
-    }
-    const std::size_t expected_size = width * height;
-    if (view.size < expected_size) {
-      RCLCPP_WARN_THROTTLE(
-          get_logger(), *get_clock(), 1000,
-          "dropping truncated camera_%u frame: got=%zu expected=%zu",
-          view.camera_index, view.size, expected_size);
-      return;
-    }
-
     auto message = std::make_unique<sensor_msgs::msg::Image>();
+    std::string error;
+    if (!orbvi_bridge::frame_to_image(view, *message, error)) {
+      RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 1000,
+                           "dropping camera_%u frame: %s",
+                           view.camera_index, error.c_str());
+      return;
+    }
     // RTSP PTS and Fake timestamps do not establish a Unix/sensor clock.
     // Stamp on receipt using the host ROS clock; no hard-sync claim.
     message->header.stamp = now();
     message->header.frame_id = frame_id_prefix_ + std::to_string(view.camera_index);
-    message->height = view.height;
-    message->width = view.width;
-    message->encoding = "mono8";
-    message->is_bigendian = 0U;
-    message->step = view.width;
-    message->data.assign(view.data, view.data + expected_size);
     publishers_[view.camera_index]->publish(std::move(message));
   }
 
   std::string runtime_mode_;
   std::array<std::string, kCameraCount> rtsp_urls_{};
+  std::string image_format_;
   bool imu_enabled_{false};
   std::string imu_bind_address_;
   std::string imu_source_address_;
