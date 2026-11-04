@@ -23,6 +23,8 @@ def generate_launch_description():
         DeclareLaunchArgument('rtsp_url_2', default_value=''),
         DeclareLaunchArgument('rtsp_url_3', default_value=''),
         DeclareLaunchArgument('camera_count', default_value='1'),
+        DeclareLaunchArgument('image_format', default_value='mono8',
+                              description='RTSP image format: mono8 or bgr8'),
         DeclareLaunchArgument('imu_enabled', default_value='false'),
         DeclareLaunchArgument('imu_bind_address', default_value='0.0.0.0'),
         DeclareLaunchArgument('imu_source_address', default_value=''),
@@ -36,6 +38,7 @@ def generate_launch_description():
             parameters=[config, {
                 'runtime_mode': 'rtsp',
                 'camera_count': ParameterValue(LaunchConfiguration('camera_count'), value_type=int),
+                'image_format': LaunchConfiguration('image_format'),
                 'rtsp_url': LaunchConfiguration('rtsp_url'),
                 'rtsp_url_1': LaunchConfiguration('rtsp_url_1'),
                 'rtsp_url_2': LaunchConfiguration('rtsp_url_2'),

@@ -7,6 +7,7 @@ orbvi_4p_bridge:
     rtsp_url_1: ''
     rtsp_url_2: ''
     rtsp_url_3: ''
+    image_format: mono8
     # Optional real OIMU/1 receiver; remains off unless explicitly enabled.
     imu_enabled: false
     imu_bind_address: 0.0.0.0
