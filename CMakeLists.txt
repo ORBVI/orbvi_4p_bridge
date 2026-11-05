@@ -119,6 +119,10 @@ if(BUILD_TESTING)
   ament_target_dependencies(test_capture_helpers builtin_interfaces)
   add_test(NAME capture_helpers COMMAND test_capture_helpers)
 
+  add_executable(test_capture_statistics test/test_capture_statistics.cpp)
+  target_include_directories(test_capture_statistics PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/tools)
+  add_test(NAME capture_statistics COMMAND test_capture_statistics)
+
   add_test(NAME image_fail_closed_runtime
     COMMAND $<TARGET_FILE:orbvi_image_stream_node> --ros-args
       -p runtime_mode:=unsupported)

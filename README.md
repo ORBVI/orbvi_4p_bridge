@@ -28,6 +28,8 @@ ros2 run orbvi_4p_bridge orbvi_capture_check 60
 
 该模式发布 `/orbvi/raw/camera_0..3/image`、对应的 `metadata`、`/orbvi/raw/imu` 和 `/orbvi/raw/imu/metadata`。图像与元数据通过 `header.stamp` 对应；IMU 元数据包含加速度和角速度各自的 IIO 时间戳。
 
+验收器预热 5 秒，按板端时间戳统计指定时长，并最多额外等待 5 秒收齐对应数据；缺失配对、帧号断档或时间戳异常均判定失败。请在所有电脑端终端使用相同的独立 `ROS_DOMAIN_ID`，避免接入其他设备的同名话题。
+
 同步模式的时间戳沿用板端采集时钟，不是电脑系统时间，也不代表已经标定的曝光或 IMU 芯片内部采样时刻。原有 `rtsp_bridge.launch.py` 默认仍使用电脑时间和原有 QoS。
 
 ## 源码目录

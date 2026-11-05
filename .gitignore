@@ -1,4 +1,7 @@
 /log/
+/log-*/
 /build/
+/build-*/
 /install/
+/install-*/
 __pycache__/

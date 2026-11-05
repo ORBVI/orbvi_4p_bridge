@@ -314,18 +314,34 @@ class BridgeNode final : public rclcpp::Node {
     diagnostics_timer_ = create_wall_timer(std::chrono::seconds(5), [this]() {
       const auto image_drops = subscription_.valid() ? subscription_.stats().dropped : 0U;
       const auto imu_drops = imu_subscription_.valid() ? imu_subscription_.stats().dropped : 0U;
+      const auto image_failures = subscription_.valid() ? subscription_.stats().failed : 0U;
+      const auto imu_failures = imu_subscription_.valid() ? imu_subscription_.stats().failed : 0U;
       const auto imu_gaps = imu_enabled_ ? imu_client_.diagnostics().imu_sequence_gaps : 0U;
       if (image_drops != reported_image_drops_ || imu_drops != reported_imu_drops_ ||
-          imu_gaps != reported_imu_gaps_) {
+          imu_gaps != reported_imu_gaps_ || image_failures != reported_image_failures_ ||
+          imu_failures != reported_imu_failures_) {
         RCLCPP_WARN(get_logger(),
                     "SDK loss counters: image_callback_drops=%llu imu_callback_drops=%llu "
-                    "imu_input_sequence_gaps=%llu",
+                    "imu_input_sequence_gaps=%llu image_callback_failures=%llu "
+                    "imu_callback_failures=%llu",
                     static_cast<unsigned long long>(image_drops),
                     static_cast<unsigned long long>(imu_drops),
-                    static_cast<unsigned long long>(imu_gaps));
+                    static_cast<unsigned long long>(imu_gaps),
+                    static_cast<unsigned long long>(image_failures),
+                    static_cast<unsigned long long>(imu_failures));
+        if (image_failures != reported_image_failures_) {
+          RCLCPP_ERROR(get_logger(), "Image callback error: %s",
+                       client_.diagnostics().last_error.c_str());
+        }
+        if (imu_failures != reported_imu_failures_) {
+          RCLCPP_ERROR(get_logger(), "IMU callback error: %s",
+                       imu_client_.diagnostics().last_error.c_str());
+        }
         reported_image_drops_ = image_drops;
         reported_imu_drops_ = imu_drops;
         reported_imu_gaps_ = imu_gaps;
+        reported_image_failures_ = image_failures;
+        reported_imu_failures_ = imu_failures;
       }
     });
   }
@@ -473,6 +489,8 @@ class BridgeNode final : public rclcpp::Node {
   std::uint64_t reported_image_drops_{0U};
   std::uint64_t reported_imu_drops_{0U};
   std::uint64_t reported_imu_gaps_{0U};
+  std::uint64_t reported_image_failures_{0U};
+  std::uint64_t reported_imu_failures_{0U};
   orbvi_sdk::Client client_;
   orbvi_sdk::SubscriptionHandle subscription_;
   orbvi_sdk::Client imu_client_;

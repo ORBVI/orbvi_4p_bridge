@@ -1,2 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<testsuites name="orbvi_4p_bridge.test_capture_bridge_launch" tests="1" failures="0" errors="0" time="0.135"><testsuite name="orbvi_4p_bridge.test_capture_bridge_launch.launch_tests" tests="1" failures="0" errors="0" skipped="0" time="0.135"><testcase classname="orbvi_4p_bridge.TestBoardCapture" name="test_capture_metadata" time="0.135" /></testsuite></testsuites>

@@ -1,9 +1,0 @@
-setup.py
-orbvi_4p_bridge/__init__.py
-orbvi_4p_bridge.egg-info/PKG-INFO
-orbvi_4p_bridge.egg-info/SOURCES.txt
-orbvi_4p_bridge.egg-info/dependency_links.txt
-orbvi_4p_bridge.egg-info/top_level.txt
-orbvi_4p_bridge/msg/__init__.py
-orbvi_4p_bridge/msg/_frame_metadata.py
-orbvi_4p_bridge/msg/_imu_metadata.py
