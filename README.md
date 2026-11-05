@@ -19,10 +19,21 @@ RTSP 启动命令增加 `image_format:=bgr8` 可发布彩色 `sensor_msgs/Image`
 
 ## 四路同步采集
 
-使用包含外触发元数据的 SDK 源码构建 Bridge，并在板端启动 `sensor_demo --external-sync`：
+使用包含外触发元数据的 SDK 源码构建 Bridge。将 `ROS电脑IPv4` 替换为电脑连接板卡的网口地址，在板端启动：
+
+```bash
+cd /userdata/orbvi-4p-demo
+export LD_LIBRARY_PATH=/usr/hobot/lib:/usr/hobot/lib/sensor
+./sensor_demo --external-sync --udp-dest ROS电脑IPv4:5600 --diagnostics --print-metrics
+```
+
+在已加载 ROS 和本次 Bridge 安装环境的电脑终端启动；验收命令在另一个相同环境的终端运行：
 
 ```bash
 ros2 launch orbvi_4p_bridge sync_capture.launch.py board_ip:=板卡IP
+```
+
+```bash
 ros2 run orbvi_4p_bridge orbvi_capture_check 60
 ```
 
