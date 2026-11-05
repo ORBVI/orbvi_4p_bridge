@@ -29,6 +29,7 @@ class CaptureStatistics {
     const std::lock_guard<std::mutex> lock(mutex_);
     observe(stamp, begin_window);
     data_.push_back({stamp, 0U, valid});
+    update_pairing_locked(stamp, true);
     latest_data_ = std::max(latest_data_, stamp);
   }
 
@@ -37,15 +38,17 @@ class CaptureStatistics {
     const std::lock_guard<std::mutex> lock(mutex_);
     observe(stamp, begin_window);
     metadata_.push_back({stamp, sequence, valid});
+    update_pairing_locked(stamp, false);
     latest_metadata_ = std::max(latest_metadata_, stamp);
   }
 
-  bool complete(std::int64_t duration_ns, bool sequence_32bit = false) const {
+  bool complete(std::int64_t duration_ns) const {
     const std::lock_guard<std::mutex> lock(mutex_);
-    if (!valid_window(duration_ns) || latest_data_ < start_ + duration_ns ||
+    if (!valid_window(duration_ns)) return false;
+    prepare_pairing_locked(duration_ns);
+    if (latest_data_ < start_ + duration_ns ||
         latest_metadata_ < start_ + duration_ns) return false;
-    const auto result = summarize_locked(duration_ns, sequence_32bit);
-    return result.missing_metadata == 0U && result.missing_data == 0U;
+    return missing_metadata_ == 0U && missing_data_ == 0U;
   }
 
   CaptureSummary summarize(std::int64_t duration_ns, bool sequence_32bit) const {
@@ -54,6 +57,33 @@ class CaptureStatistics {
   }
 
  private:
+  void update_pairing_locked(std::int64_t stamp, bool data) const {
+    if (pairing_duration_ <= 0 || stamp < start_ ||
+        stamp >= start_ + pairing_duration_) return;
+    const auto position = pairing_balance_.try_emplace(stamp, 0).first;
+    auto& balance = position->second;
+    if (data) {
+      if (balance < 0) --missing_data_;
+      else ++missing_metadata_;
+      ++balance;
+    } else {
+      if (balance > 0) --missing_metadata_;
+      else ++missing_data_;
+      --balance;
+    }
+    if (balance == 0) pairing_balance_.erase(position);
+  }
+
+  void prepare_pairing_locked(std::int64_t duration_ns) const {
+    if (pairing_duration_ == duration_ns) return;
+    pairing_duration_ = duration_ns;
+    pairing_balance_.clear();
+    missing_data_ = 0U;
+    missing_metadata_ = 0U;
+    for (const auto& record : data_) update_pairing_locked(record.stamp, true);
+    for (const auto& record : metadata_) update_pairing_locked(record.stamp, false);
+  }
+
   CaptureSummary summarize_locked(std::int64_t duration_ns, bool sequence_32bit) const {
     CaptureSummary result;
     result.invalid = invalid_stamps_;
@@ -144,6 +174,10 @@ class CaptureStatistics {
   std::uint64_t invalid_stamps_{0U};
   std::vector<Record> data_;
   std::vector<Record> metadata_;
+  mutable std::int64_t pairing_duration_{0};
+  mutable std::unordered_map<std::int64_t, std::int64_t> pairing_balance_;
+  mutable std::uint64_t missing_data_{0U};
+  mutable std::uint64_t missing_metadata_{0U};
   mutable std::mutex mutex_;
 };
 

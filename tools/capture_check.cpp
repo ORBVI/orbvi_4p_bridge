@@ -31,7 +31,8 @@ using Statistics = orbvi_bridge::CaptureStatistics;
 
 class CaptureCheck final : public rclcpp::Node {
  public:
-  CaptureCheck(int warmup_seconds, int duration_seconds)
+  CaptureCheck(int warmup_seconds, int duration_seconds,
+               const rclcpp::Node::SharedPtr& image_node)
       : Node("orbvi_capture_check"),
         start_(Clock::now() + std::chrono::seconds(warmup_seconds)),
         end_(start_ + std::chrono::seconds(duration_seconds + 5)),
@@ -43,11 +44,12 @@ class CaptureCheck final : public rclcpp::Node {
       auto group = create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
       groups_.push_back(group);
       rclcpp::SubscriptionOptions options;
-      auto image_group = create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive, false);
+      auto image_group = image_node->create_callback_group(
+          rclcpp::CallbackGroupType::MutuallyExclusive, false);
       image_groups_.push_back(image_group);
       options.callback_group = image_group;
       const auto base = "/orbvi/raw/camera_" + std::to_string(index);
-      image_subscriptions_[index] = create_subscription<sensor_msgs::msg::Image>(
+      image_subscriptions_[index] = image_node->create_subscription<sensor_msgs::msg::Image>(
           base + "/image", qos,
           [this, index](sensor_msgs::msg::Image::ConstSharedPtr message) {
             const auto stamp = timestamp_ns(message->header.stamp);
@@ -74,7 +76,7 @@ class CaptureCheck final : public rclcpp::Node {
     groups_.push_back(group);
     rclcpp::SubscriptionOptions options;
     options.callback_group = group;
-    const auto imu_qos = rclcpp::QoS(rclcpp::KeepLast(2048)).reliable().durability_volatile();
+    const auto imu_qos = rclcpp::QoS(rclcpp::KeepLast(8192)).reliable().durability_volatile();
     imu_subscription_ = create_subscription<sensor_msgs::msg::Imu>(
         "/orbvi/raw/imu", imu_qos, [this](sensor_msgs::msg::Imu::ConstSharedPtr message) {
           const auto stamp = timestamp_ns(message->header.stamp);
@@ -106,7 +108,7 @@ class CaptureCheck final : public rclcpp::Node {
 
   bool complete() const {
     return std::all_of(cameras_.begin(), cameras_.end(),
-                       [this](const auto& stats) { return stats.complete(duration_ns_, true); }) &&
+                       [this](const auto& stats) { return stats.complete(duration_ns_); }) &&
         imu_.complete(duration_ns_);
   }
 
@@ -120,7 +122,11 @@ class CaptureCheck final : public rclcpp::Node {
                 << " discontinuities=" << stats.discontinuities
                 << " image_without_metadata=" << stats.missing_metadata
                 << " metadata_without_image=" << stats.missing_data
-                << " invalid=" << stats.invalid << '\n';
+                << " invalid=" << stats.invalid
+                << " window_start_ns=" << stats.window_start
+                << " window_end_ns=" << stats.window_end
+                << " first_missing_image_ns=" << stats.first_missing_data
+                << " first_missing_metadata_ns=" << stats.first_missing_metadata << '\n';
       if (fps < 29.0 || fps > 31.0 || stats.metadata_count == 0U || stats.gaps ||
           stats.discontinuities || stats.invalid || stats.missing_metadata || stats.missing_data) valid = false;
     }
@@ -177,12 +183,18 @@ int main(int argc, char** argv) {
     }
   }
   rclcpp::init(argc, argv);
-  auto node = std::make_shared<CaptureCheck>(5, duration);
+  auto image_context = std::make_shared<rclcpp::Context>();
+  image_context->init(argc, argv, rclcpp::InitOptions().auto_initialize_logging(false));
+  auto image_node = std::make_shared<rclcpp::Node>(
+      "orbvi_capture_check_images", rclcpp::NodeOptions().context(image_context));
+  auto node = std::make_shared<CaptureCheck>(5, duration, image_node);
   rclcpp::executors::SingleThreadedExecutor executor;
-  rclcpp::executors::SingleThreadedExecutor image_executor;
+  rclcpp::ExecutorOptions image_options;
+  image_options.context = image_context;
+  rclcpp::executors::SingleThreadedExecutor image_executor(image_options);
   executor.add_node(node);
   for (const auto& group : node->image_groups()) {
-    image_executor.add_callback_group(group, node->get_node_base_interface());
+    image_executor.add_callback_group(group, image_node->get_node_base_interface());
   }
   std::thread image_worker([&image_executor]() { image_executor.spin(); });
   try {
@@ -192,11 +204,13 @@ int main(int argc, char** argv) {
   } catch (...) {
     image_executor.cancel();
     image_worker.join();
+    image_context->shutdown("capture check interrupted");
     throw;
   }
   image_executor.cancel();
   image_worker.join();
   const bool result = node->report();
+  image_context->shutdown("capture check finished");
   rclcpp::shutdown();
   return result ? 0 : 1;
 }

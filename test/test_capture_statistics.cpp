@@ -68,4 +68,28 @@ int main() {
   overflow.add_data(std::numeric_limits<std::int64_t>::max(), true, true);
   assert(!overflow.complete(200));
   assert(overflow.summarize(200, true).invalid == 1);
+
+  orbvi_bridge::CaptureStatistics incremental;
+  incremental.add_data(100, true, false);
+  incremental.add_metadata(100, 1, true, true);
+  assert(!incremental.complete(200));
+  incremental.add_metadata(200, 2, true, true);
+  incremental.add_data(300, true, true);
+  incremental.add_metadata(300, 3, true, true);
+  assert(!incremental.complete(200));
+  incremental.add_data(200, true, true);
+  assert(incremental.complete(200));
+  incremental.add_data(200, true, true);
+  assert(!incremental.complete(200));
+  incremental.add_metadata(200, 2, true, true);
+  assert(incremental.complete(200));
+  incremental.add_data(350, true, true);
+  assert(incremental.complete(200));
+  assert(!incremental.complete(300));
+  incremental.add_data(400, true, true);
+  incremental.add_metadata(400, 4, true, true);
+  assert(!incremental.complete(300));
+  incremental.add_metadata(350, 4, true, true);
+  assert(incremental.complete(300));
+  assert(incremental.complete(200));
 }
