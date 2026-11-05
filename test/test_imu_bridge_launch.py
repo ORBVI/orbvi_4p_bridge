@@ -59,6 +59,7 @@ class TestImuBridge(unittest.TestCase):
         self.assertGreater(node.count_publishers('/orbvi/test/imu'), 0)
         self.assertEqual(dict(node.get_topic_names_and_types())['/orbvi/test/imu'],
                          ['sensor_msgs/msg/Imu'])
+        self.assertEqual(node.count_publishers('/orbvi/test/imu/metadata'), 0)
 
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sender:
             bad = bytearray(GOLDEN)

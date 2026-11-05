@@ -110,3 +110,4 @@ class TestFourCameraFakeImages(unittest.TestCase):
         for topic in topics:
             self.assertIn(topic, topic_types)
             self.assertIn('sensor_msgs/msg/Image', topic_types[topic])
+        self.assertNotIn('/orbvi/raw/camera_0/metadata', topic_types)
