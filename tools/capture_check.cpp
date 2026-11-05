@@ -106,7 +106,7 @@ class CaptureCheck final : public rclcpp::Node {
 
   bool complete() const {
     return std::all_of(cameras_.begin(), cameras_.end(),
-                       [this](const auto& stats) { return stats.complete(duration_ns_, true); }) &&
+                       [this](const auto& stats) { return stats.complete(duration_ns_); }) &&
         imu_.complete(duration_ns_);
   }
 
