@@ -184,7 +184,7 @@ int main(int argc, char** argv) {
   }
   rclcpp::init(argc, argv);
   auto image_context = std::make_shared<rclcpp::Context>();
-  image_context->init(argc, argv);
+  image_context->init(argc, argv, rclcpp::InitOptions().auto_initialize_logging(false));
   auto image_node = std::make_shared<rclcpp::Node>(
       "orbvi_capture_check_images", rclcpp::NodeOptions().context(image_context));
   auto node = std::make_shared<CaptureCheck>(5, duration, image_node);
